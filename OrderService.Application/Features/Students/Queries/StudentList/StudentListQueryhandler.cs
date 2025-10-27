@@ -4,7 +4,7 @@ using MediatR;
 using OrderService.Application.Contracts;
 using OrderService.Application.helper;
 using OrderService.Application.Models.utiles;
-using OrderServise.Domain.Entities;
+using OrderService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

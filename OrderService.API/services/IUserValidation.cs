@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using OrderService.Application.Contracts;
-using OrderServise.Domain.Entities;
+using OrderService.Domain.Entities;
 using System.Security.Claims;
 
 namespace OrderService.API.services

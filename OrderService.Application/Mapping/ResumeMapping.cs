@@ -2,8 +2,8 @@
 using OrderService.Application.Features.Orders.Comands.CreateNewOrder;
 using OrderService.Application.Features.Resumes.Commands.ResumeCreate;
 using OrderService.Application.Features.Resumes.Queries.GetResumeById;
-using OrderServise.Domain.Entities;
-using OrderServise.Domain.Entities.Mongo;
+using OrderService.Domain.Entities;
+using OrderService.Domain.Entities.Mongo;
 using System;
 using System.Collections.Generic;
 using System.Linq;

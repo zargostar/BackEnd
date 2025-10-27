@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using OrderService.Application.Contracts;
-using OrderServise.Domain.Entities;
+using OrderService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

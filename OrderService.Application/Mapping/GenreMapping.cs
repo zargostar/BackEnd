@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using OrderService.Application.Features.Genres.Comands;
 using OrderService.Application.Features.Genres.Queries.Getgenre;
-using OrderServise.Domain.Entities;
+using OrderService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OrderService.Application.Features.Genres.Comands;
 using OrderService.Application.Features.Genres.Queries.Getgenre;
-using OrderServise.Domain.Common;
+using OrderService.Domain.Common;
 using System.Data;
 
 namespace OrderService.API.Controllers

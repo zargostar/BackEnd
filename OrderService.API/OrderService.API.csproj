@@ -31,7 +31,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\OrderService.Application\OrderService.Application.csproj" />
-		<ProjectReference Include="..\OrderServise.Infrastructure\OrderServise.Infrastructure.csproj" />
+		<ProjectReference Include="..\OrderService.Infrastructure\OrderService.Infrastructure.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

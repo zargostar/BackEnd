@@ -1,4 +1,4 @@
-﻿using OrderServise.Domain.Common;
+﻿using OrderService.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;

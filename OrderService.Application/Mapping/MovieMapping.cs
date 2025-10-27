@@ -2,7 +2,7 @@
 using OrderService.Application.Features.Movies.Comands;
 using OrderService.Application.Features.Movies.Dtos;
 using OrderService.Application.Features.Theaters.Dtos;
-using OrderServise.Domain.Entities;
+using OrderService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
-using OrderServise.Domain.Entities;
+using OrderService.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace OrderService.Application.Models.userDtos

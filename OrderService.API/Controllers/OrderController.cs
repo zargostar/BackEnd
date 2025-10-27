@@ -8,8 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using OrderService.Application.Features.Orders.Comands.CreateNewOrder;
 using OrderService.Application.Features.Orders.Comands.DeleteOrder;
-using OrderServise.Domain.Entities;
-using OrderServise.Infrastructure.Persistance;
+using OrderService.Domain.Entities;
+using OrderService.Infrastructure.Persistance;
 
 namespace OrderService.API.Controllers
 {

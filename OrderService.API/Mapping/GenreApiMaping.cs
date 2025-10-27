@@ -2,7 +2,7 @@
 using OrderService.Application.Features.Genres.Queries.Getgenre;
 using OrderService.Application.Features.Orders.Comands.CreateNewOrder;
 using OrderService.Application.Models;
-using OrderServise.Domain.Entities;
+using OrderService.Domain.Entities;
 
 namespace OrderService.API.Mapping
 {

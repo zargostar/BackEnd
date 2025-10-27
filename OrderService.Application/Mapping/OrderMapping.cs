@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using OrderService.Application.Features.Orders.Comands.CreateNewOrder;
-using OrderServise.Domain.Entities;
-using OrderServise.Domain.Entities.Mongo;
+using OrderService.Domain.Entities;
+using OrderService.Domain.Entities.Mongo;
 using System;
 using System.Collections.Generic;
 using System.Linq;

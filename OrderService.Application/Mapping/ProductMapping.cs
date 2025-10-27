@@ -3,7 +3,7 @@ using OrderService.Application.Features.Products.Command.CreateProduct;
 using OrderService.Application.Features.Products.Command.UpdateProduct;
 using OrderService.Application.Features.Products.Queries.GetProductById;
 using OrderService.Application.Features.Products.Queries.ProductList;
-using OrderServise.Domain.Entities;
+using OrderService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

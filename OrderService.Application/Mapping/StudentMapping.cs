@@ -2,7 +2,7 @@
 using OrderService.Application.Features.Students.Commands.CreateStudent;
 using OrderService.Application.Features.Students.Commands.UpdateStudent;
 using OrderService.Application.Features.Students.Queries.StudentList;
-using OrderServise.Domain.Entities;
+using OrderService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

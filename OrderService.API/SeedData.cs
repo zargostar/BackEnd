@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
-using OrderServise.Domain.Common;
-using OrderServise.Domain.Entities;
-using OrderServise.Infrastructure.Persistance;
+using OrderService.Domain.Common;
+using OrderService.Domain.Entities;
+using OrderService.Infrastructure.Persistance;
 
 namespace OrderService.API
 {

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using OrderService.Application.Models.userDtos;
-using OrderServise.Domain.Entities;
+using OrderService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

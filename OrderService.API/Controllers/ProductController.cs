@@ -12,7 +12,7 @@ using OrderService.Application.Features.Products.Command.UpdateProduct;
 using OrderService.Application.Features.Products.Queries.GetProductById;
 using OrderService.Application.Features.Products.Queries.ProductList;
 using OrderService.Application.Models.utiles;
-using OrderServise.Domain.Entities;
+using OrderService.Domain.Entities;
 
 namespace OrderService.API.Controllers
 {
