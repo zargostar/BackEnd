@@ -1,0 +1,664 @@
+2024-08-03 15:56:19.900 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-03 15:56:20.603 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-03 15:56:22.349 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-03 15:56:22.400 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-03 15:56:22.404 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-03 15:56:23.186 +03:30 [INF] Server desktop-cq9frio:23232:6fa32c6a successfully announced in 629.4075 ms
+2024-08-03 15:56:23.205 +03:30 [INF] Server desktop-cq9frio:23232:6fa32c6a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-03 15:56:23.288 +03:30 [INF] 1 servers were removed due to timeout
+2024-08-03 15:56:23.690 +03:30 [INF] Server desktop-cq9frio:23232:6fa32c6a all the dispatchers started
+2024-08-03 16:43:13.183 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-03 16:43:13.772 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-03 16:43:15.000 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-03 16:43:15.006 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-03 16:43:15.009 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-03 16:43:18.320 +03:30 [INF] Server desktop-cq9frio:1588:eddfed8f successfully announced in 3169.6007 ms
+2024-08-03 16:43:18.341 +03:30 [INF] Server desktop-cq9frio:1588:eddfed8f is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-03 16:43:18.376 +03:30 [INF] 1 servers were removed due to timeout
+2024-08-03 16:43:19.000 +03:30 [INF] Server desktop-cq9frio:1588:eddfed8f all the dispatchers started
+2024-08-03 16:44:32.753 +03:30 [ERR] An exception occurred in the database while saving changes for context type 'OrderServise.Infrastructure.Persistance.DataBaseContext'.
+System.InvalidOperationException: The value of 'ProductFeature.FeatureId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.PrepareToSave()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetEntriesToSave(Boolean cascadeChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+System.InvalidOperationException: The value of 'ProductFeature.FeatureId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.PrepareToSave()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetEntriesToSave(Boolean cascadeChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-08-03 16:44:33.196 +03:30 [ERR] The value of 'ProductFeature.FeatureId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.
+2024-08-03 16:44:33.265 +03:30 [ERR] stack trace-   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.PrepareToSave()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetEntriesToSave(Boolean cascadeChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at OrderServise.Infrastructure.Repositories.BaseRepositoryAsync`1.AddAsync(T entity) in G:\nextjs\talajoorback\OrderServise.Infrastructure\Repositories\BaseRepositoryAsync.cs:line 71
+   at OrderService.Application.Features.Products.Command.CreateProduct.CreateProductCommandHandler.Handle(CreateProductCommand request, CancellationToken cancellationToken) in G:\nextjs\talajoorback\OrderService.Application\Features\Products\Command\CreateProduct\CreateProductCommandHandler.cs:line 30
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.ProductController.Post(CreateProductCommand create) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-08-03 16:45:03.320 +03:30 [ERR] An exception occurred in the database while saving changes for context type 'OrderServise.Infrastructure.Persistance.DataBaseContext'.
+System.InvalidOperationException: The value of 'ProductFeature.FeatureId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.PrepareToSave()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetEntriesToSave(Boolean cascadeChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+System.InvalidOperationException: The value of 'ProductFeature.FeatureId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.PrepareToSave()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetEntriesToSave(Boolean cascadeChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-08-03 16:46:58.540 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-03 16:46:59.056 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-03 16:46:59.802 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-03 16:46:59.806 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-03 16:46:59.809 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-03 16:47:02.993 +03:30 [INF] Server desktop-cq9frio:14032:d5545b97 successfully announced in 3081.6785 ms
+2024-08-03 16:47:03.047 +03:30 [INF] Server desktop-cq9frio:14032:d5545b97 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-03 16:47:03.705 +03:30 [INF] Server desktop-cq9frio:14032:d5545b97 all the dispatchers started
+2024-08-03 16:47:46.857 +03:30 [ERR] An exception occurred in the database while saving changes for context type 'OrderServise.Infrastructure.Persistance.DataBaseContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Products_Cities_CityId". The conflict occurred in database "Carisma", table "ordering.Cities", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:2780a40d-8df3-4178-bc05-89665d236d35
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Products_Cities_CityId". The conflict occurred in database "Carisma", table "ordering.Cities", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:2780a40d-8df3-4178-bc05-89665d236d35
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-08-03 16:47:48.136 +03:30 [ERR] An error occurred while saving the entity changes. See the inner exception for details.
+2024-08-03 16:47:48.149 +03:30 [ERR] stack trace-   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at OrderServise.Infrastructure.Repositories.BaseRepositoryAsync`1.AddAsync(T entity) in G:\nextjs\talajoorback\OrderServise.Infrastructure\Repositories\BaseRepositoryAsync.cs:line 71
+   at OrderService.Application.Features.Products.Command.CreateProduct.CreateProductCommandHandler.Handle(CreateProductCommand request, CancellationToken cancellationToken) in G:\nextjs\talajoorback\OrderService.Application\Features\Products\Command\CreateProduct\CreateProductCommandHandler.cs:line 30
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.ProductController.Post(CreateProductCommand create) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-08-03 16:52:03.119 +03:30 [INF] 1 servers were removed due to timeout
+2024-08-03 16:52:57.178 +03:30 [ERR] An exception occurred in the database while saving changes for context type 'OrderServise.Infrastructure.Persistance.DataBaseContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Products_Cities_CityId". The conflict occurred in database "Carisma", table "ordering.Cities", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:2780a40d-8df3-4178-bc05-89665d236d35
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Products_Cities_CityId". The conflict occurred in database "Carisma", table "ordering.Cities", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:2780a40d-8df3-4178-bc05-89665d236d35
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-08-03 16:52:58.435 +03:30 [ERR] An error occurred while saving the entity changes. See the inner exception for details.
+2024-08-03 16:52:58.442 +03:30 [ERR] stack trace-   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at OrderServise.Infrastructure.Repositories.BaseRepositoryAsync`1.AddAsync(T entity) in G:\nextjs\talajoorback\OrderServise.Infrastructure\Repositories\BaseRepositoryAsync.cs:line 71
+   at OrderService.Application.Features.Products.Command.CreateProduct.CreateProductCommandHandler.Handle(CreateProductCommand request, CancellationToken cancellationToken) in G:\nextjs\talajoorback\OrderService.Application\Features\Products\Command\CreateProduct\CreateProductCommandHandler.cs:line 30
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.ProductController.Post(CreateProductCommand create) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-08-03 16:54:06.252 +03:30 [ERR] An exception occurred in the database while saving changes for context type 'OrderServise.Infrastructure.Persistance.DataBaseContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Products_Cities_CityId". The conflict occurred in database "Carisma", table "ordering.Cities", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:2780a40d-8df3-4178-bc05-89665d236d35
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_Products_Cities_CityId". The conflict occurred in database "Carisma", table "ordering.Cities", column 'Id'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:2780a40d-8df3-4178-bc05-89665d236d35
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-08-03 16:54:07.197 +03:30 [ERR] An error occurred while saving the entity changes. See the inner exception for details.
+2024-08-03 16:54:07.206 +03:30 [ERR] stack trace-   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at OrderServise.Infrastructure.Repositories.BaseRepositoryAsync`1.AddAsync(T entity) in G:\nextjs\talajoorback\OrderServise.Infrastructure\Repositories\BaseRepositoryAsync.cs:line 71
+   at OrderService.Application.Features.Products.Command.CreateProduct.CreateProductCommandHandler.Handle(CreateProductCommand request, CancellationToken cancellationToken) in G:\nextjs\talajoorback\OrderService.Application\Features\Products\Command\CreateProduct\CreateProductCommandHandler.cs:line 30
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.ProductController.Post(CreateProductCommand create) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 32
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-08-03 16:59:15.182 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-03 16:59:15.656 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-03 16:59:16.525 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-03 16:59:16.529 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-03 16:59:16.532 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-03 16:59:19.700 +03:30 [INF] Server desktop-cq9frio:16692:4ad9b95f successfully announced in 3021.9876 ms
+2024-08-03 16:59:19.723 +03:30 [INF] Server desktop-cq9frio:16692:4ad9b95f is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-03 16:59:20.432 +03:30 [INF] Server desktop-cq9frio:16692:4ad9b95f all the dispatchers started
+2024-08-03 17:04:19.854 +03:30 [INF] 1 servers were removed due to timeout
+2024-08-03 17:16:30.773 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-03 17:16:31.334 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-03 17:16:32.184 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-03 17:16:32.187 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-03 17:16:32.189 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-03 17:16:35.065 +03:30 [INF] Server desktop-cq9frio:5760:ca3f8fb4 successfully announced in 2746.917 ms
+2024-08-03 17:16:35.255 +03:30 [INF] Server desktop-cq9frio:5760:ca3f8fb4 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-03 17:16:36.039 +03:30 [INF] Server desktop-cq9frio:5760:ca3f8fb4 all the dispatchers started
+2024-08-03 18:05:34.643 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-03 18:05:35.221 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-03 18:05:35.935 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-03 18:05:35.957 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-03 18:05:35.961 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-03 18:05:36.428 +03:30 [INF] Server desktop-cq9frio:18328:a87a8e94 successfully announced in 374.6543 ms
+2024-08-03 18:05:36.444 +03:30 [INF] Server desktop-cq9frio:18328:a87a8e94 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-03 18:05:37.044 +03:30 [INF] 2 servers were removed due to timeout
+2024-08-03 18:05:39.982 +03:30 [INF] Server desktop-cq9frio:18328:a87a8e94 all the dispatchers started
+2024-08-03 18:33:18.307 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-03 18:33:18.841 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-03 18:33:19.617 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-03 18:33:19.623 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-03 18:33:19.625 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-03 18:33:20.245 +03:30 [INF] Server desktop-cq9frio:7156:4317928b successfully announced in 515.3974 ms
+2024-08-03 18:33:20.264 +03:30 [INF] Server desktop-cq9frio:7156:4317928b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-03 18:33:20.340 +03:30 [INF] 1 servers were removed due to timeout
+2024-08-03 18:33:20.794 +03:30 [INF] Server desktop-cq9frio:7156:4317928b all the dispatchers started
+2024-08-03 18:34:10.450 +03:30 [WRN] ppppp
+2024-08-03 18:34:22.329 +03:30 [ERR] stack trace-   at OrderService.API.Controllers.ProductController.Get(ProductListQuery pagination) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 44
+   at lambda_method41(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-08-03 23:20:58.614 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-03 23:20:59.252 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-03 23:21:00.844 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-03 23:21:00.849 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-03 23:21:00.858 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-03 23:21:02.041 +03:30 [INF] Server desktop-cq9frio:8556:2ed69804 successfully announced in 1036.6592 ms
+2024-08-03 23:21:02.064 +03:30 [INF] Server desktop-cq9frio:8556:2ed69804 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-03 23:21:02.118 +03:30 [INF] 1 servers were removed due to timeout
+2024-08-03 23:21:02.697 +03:30 [INF] Server desktop-cq9frio:8556:2ed69804 all the dispatchers started
+2024-08-03 23:21:20.103 +03:30 [ERR] Unable to resolve service for type 'Microsoft.Extensions.Logging.ILogger' while attempting to activate 'OrderService.API.Controllers.ProductController'.
+2024-08-03 23:21:20.132 +03:30 [ERR] stack trace-   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.ThrowHelperUnableToResolveService(Type type, Type requiredBy)
+   at lambda_method45(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-08-03 23:23:45.756 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-03 23:23:46.203 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-03 23:23:46.834 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-03 23:23:46.839 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-03 23:23:46.842 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-03 23:23:47.599 +03:30 [INF] Server desktop-cq9frio:26296:dbf12f4e successfully announced in 703.6887 ms
+2024-08-03 23:23:47.645 +03:30 [INF] Server desktop-cq9frio:26296:dbf12f4e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-03 23:23:48.149 +03:30 [INF] Server desktop-cq9frio:26296:dbf12f4e all the dispatchers started
+2024-08-03 23:25:09.430 +03:30 [WRN] Recurring job 'test recurring' can't be scheduled due to an error and will be retried in 00:00:15.
+System.InvalidOperationException: Recurring job can't be scheduled, see inner exception for details.
+ ---> Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'factory')
+   at System.ThrowHelper.Throw(String paramName)
+   at lambda_method49(Closure, Object[])
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Hangfire.Common.SerializationHelper.Deserialize(String value, Type type, SerializationOption option)
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+   at Hangfire.Storage.InvocationData.DeserializeArguments(MethodInfo methodInfo, String[] arguments)
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   at Hangfire.RecurringJobEntity..ctor(String recurringJobId, IDictionary`2 recurringJob, ITimeZoneResolver timeZoneResolver, DateTime now)
+   --- End of inner exception stack trace ---
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now)
+2024-08-03 23:25:24.527 +03:30 [WRN] Recurring job 'test recurring' can't be scheduled due to an error and will be retried in 00:00:15.
+System.InvalidOperationException: Recurring job can't be scheduled, see inner exception for details.
+ ---> Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'factory')
+   at System.ThrowHelper.Throw(String paramName)
+   at lambda_method49(Closure, Object[])
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Hangfire.Common.SerializationHelper.Deserialize(String value, Type type, SerializationOption option)
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+   at Hangfire.Storage.InvocationData.DeserializeArguments(MethodInfo methodInfo, String[] arguments)
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   at Hangfire.RecurringJobEntity..ctor(String recurringJobId, IDictionary`2 recurringJob, ITimeZoneResolver timeZoneResolver, DateTime now)
+   --- End of inner exception stack trace ---
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now)
+2024-08-03 23:25:39.666 +03:30 [WRN] Recurring job 'test recurring' can't be scheduled due to an error and will be retried in 00:00:15.
+System.InvalidOperationException: Recurring job can't be scheduled, see inner exception for details.
+ ---> Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'factory')
+   at System.ThrowHelper.Throw(String paramName)
+   at lambda_method49(Closure, Object[])
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Hangfire.Common.SerializationHelper.Deserialize(String value, Type type, SerializationOption option)
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+   at Hangfire.Storage.InvocationData.DeserializeArguments(MethodInfo methodInfo, String[] arguments)
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   at Hangfire.RecurringJobEntity..ctor(String recurringJobId, IDictionary`2 recurringJob, ITimeZoneResolver timeZoneResolver, DateTime now)
+   --- End of inner exception stack trace ---
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now)
+2024-08-03 23:25:54.763 +03:30 [WRN] Recurring job 'test recurring' can't be scheduled due to an error and will be retried in 00:00:15.
+System.InvalidOperationException: Recurring job can't be scheduled, see inner exception for details.
+ ---> Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'factory')
+   at System.ThrowHelper.Throw(String paramName)
+   at lambda_method49(Closure, Object[])
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Hangfire.Common.SerializationHelper.Deserialize(String value, Type type, SerializationOption option)
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+   at Hangfire.Storage.InvocationData.DeserializeArguments(MethodInfo methodInfo, String[] arguments)
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   at Hangfire.RecurringJobEntity..ctor(String recurringJobId, IDictionary`2 recurringJob, ITimeZoneResolver timeZoneResolver, DateTime now)
+   --- End of inner exception stack trace ---
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now)
+2024-08-03 23:26:09.872 +03:30 [WRN] Recurring job 'test recurring' can't be scheduled due to an error and will be retried in 00:00:15.
+System.InvalidOperationException: Recurring job can't be scheduled, see inner exception for details.
+ ---> Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'factory')
+   at System.ThrowHelper.Throw(String paramName)
+   at lambda_method49(Closure, Object[])
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Hangfire.Common.SerializationHelper.Deserialize(String value, Type type, SerializationOption option)
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+   at Hangfire.Storage.InvocationData.DeserializeArguments(MethodInfo methodInfo, String[] arguments)
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   at Hangfire.RecurringJobEntity..ctor(String recurringJobId, IDictionary`2 recurringJob, ITimeZoneResolver timeZoneResolver, DateTime now)
+   --- End of inner exception stack trace ---
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now)
+2024-08-03 23:26:24.989 +03:30 [ERR] Recurring job 'test recurring' can't be scheduled due to an error and will be disabled.
+System.InvalidOperationException: Recurring job can't be scheduled, see inner exception for details.
+ ---> Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'factory')
+   at System.ThrowHelper.Throw(String paramName)
+   at lambda_method49(Closure, Object[])
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Hangfire.Common.SerializationHelper.Deserialize(String value, Type type, SerializationOption option)
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+   at Hangfire.Storage.InvocationData.DeserializeArguments(MethodInfo methodInfo, String[] arguments)
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   at Hangfire.RecurringJobEntity..ctor(String recurringJobId, IDictionary`2 recurringJob, ITimeZoneResolver timeZoneResolver, DateTime now)
+   --- End of inner exception stack trace ---
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now)
+2024-08-03 23:28:47.697 +03:30 [INF] 1 servers were removed due to timeout
+2024-08-03 23:49:13.756 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-03 23:49:14.227 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-03 23:49:15.367 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-03 23:49:15.406 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-03 23:49:15.410 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-03 23:49:16.263 +03:30 [INF] Server desktop-cq9frio:8116:c4166295 successfully announced in 727.2524 ms
+2024-08-03 23:49:16.284 +03:30 [INF] Server desktop-cq9frio:8116:c4166295 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-03 23:49:16.322 +03:30 [INF] 1 servers were removed due to timeout
+2024-08-03 23:49:16.735 +03:30 [INF] Server desktop-cq9frio:8116:c4166295 all the dispatchers started
+2024-08-03 23:58:33.196 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-03 23:58:33.695 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-03 23:58:34.310 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-03 23:58:34.314 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-03 23:58:34.317 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-03 23:58:35.098 +03:30 [INF] Server desktop-cq9frio:17504:e57666ad successfully announced in 705.7065 ms
+2024-08-03 23:58:35.121 +03:30 [INF] Server desktop-cq9frio:17504:e57666ad is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-03 23:58:35.176 +03:30 [INF] 1 servers were removed due to timeout
+2024-08-03 23:58:35.640 +03:30 [INF] Server desktop-cq9frio:17504:e57666ad all the dispatchers started
+2024-08-03 23:59:07.796 +03:30 [WRN] Recurring job 'test recurring' can't be scheduled due to an error and will be retried in 00:00:15.
+System.InvalidOperationException: Recurring job can't be scheduled, see inner exception for details.
+ ---> Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'factory')
+   at System.ThrowHelper.Throw(String paramName)
+   at lambda_method85(Closure, Object[])
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Hangfire.Common.SerializationHelper.Deserialize(String value, Type type, SerializationOption option)
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+   at Hangfire.Storage.InvocationData.DeserializeArguments(MethodInfo methodInfo, String[] arguments)
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   at Hangfire.RecurringJobEntity..ctor(String recurringJobId, IDictionary`2 recurringJob, ITimeZoneResolver timeZoneResolver, DateTime now)
+   --- End of inner exception stack trace ---
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now)
+2024-08-03 23:59:22.895 +03:30 [WRN] Recurring job 'test recurring' can't be scheduled due to an error and will be retried in 00:00:15.
+System.InvalidOperationException: Recurring job can't be scheduled, see inner exception for details.
+ ---> Hangfire.Common.JobLoadException: Could not load the job. See inner exception for the details.
+ ---> System.ArgumentNullException: Value cannot be null. (Parameter 'factory')
+   at System.ThrowHelper.Throw(String paramName)
+   at lambda_method85(Closure, Object[])
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty containerProperty, ObjectConstructor`1 creator, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty containerMember, JsonProperty containerProperty, String id, Boolean& createdFromNonDefaultCreator)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Hangfire.Common.SerializationHelper.Deserialize(String value, Type type, SerializationOption option)
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+--- End of stack trace from previous location ---
+   at Hangfire.Storage.InvocationData.DeserializeArgument(String argument, Type type)
+   at Hangfire.Storage.InvocationData.DeserializeArguments(MethodInfo methodInfo, String[] arguments)
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   --- End of inner exception stack trace ---
+   at Hangfire.Storage.InvocationData.DeserializeJob()
+   at Hangfire.RecurringJobEntity..ctor(String recurringJobId, IDictionary`2 recurringJob, ITimeZoneResolver timeZoneResolver, DateTime now)
+   --- End of inner exception stack trace ---
+   at Hangfire.Server.RecurringJobScheduler.ScheduleRecurringJob(BackgroundProcessContext context, IStorageConnection connection, String recurringJobId, RecurringJobEntity recurringJob, DateTime now)

@@ -1,0 +1,57 @@
+زمانی که نیاز به تعداد زیادی اشیاء مشابه داریم.
+زمانی که ساخت شیء پرهزینه یا پیچیده است.
+================
+public interface IShape
+{
+    IShape Clone();
+    void Display();
+}
+=============
+
+public class Circle : IShape
+{
+    public int Radius { get; set; }
+    public string Color { get; set; }
+
+    public Circle(int radius, string color)
+    {
+        Radius = radius;
+        Color = color;
+    }
+
+    public IShape Clone()
+    {
+        return new Circle(this.Radius, this.Color);
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"دایره با شعاع = {Radius} و رنگ = {Color}");
+    }
+}
+
+public class Rectangle : IShape
+{
+    public int Width { get; set; }
+    public int Height { get; set; }
+    public string Color { get; set; }
+
+    public Rectangle(int width, int height, string color)
+    {
+        Width = width;
+        Height = height;
+        Color = color;
+    }
+
+    public IShape Clone()
+    {
+        return new Rectangle(this.Width, this.Height, this.Color);
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"مستطیل با عرض = {Width}، ارتفاع = {Height} و رنگ = {Color}");
+    }
+}
+================
+

@@ -1,0 +1,41 @@
+ relation only with several table is considerid
+    var includes = new List<Expression<Func<Product, Object>>>()
+    {
+        x=>x.ProductSize,
+        x=>x.ProductFeatures,
+        x=>x.City,
+
+
+    };
+ var result = studentRepository.GetAsync(predicate:null,st=>st.OrderByDescending(x=>x.BirthDate), include);
+==============================
+relation only with one table ic considerid
+var data = await statesRepositoy.GetAsync(null, null, "Cities");
+
+===============================
+   Expression<Func<Product, bool>> query = null;
+ if (!String.IsNullOrEmpty(request.Name) && request.Name != "null")
+ {
+     query = query.And(c => c.Name.Contains(request.Name));
+    
+ };
+====================
+var sss = _dbContext.Students.Where(x => x.SportStudents.
+Select(sp=>sp.StudentId)
+.Contains(x.Id));
+---------------------------
+SELECT [s].[Id], [s].[BirthDate], [s].[Images], [s].[Name]
+FROM [ordering].[Students] AS [s]
+WHERE [s].[Id] IN (
+    SELECT [s0].[StudentId]
+    FROM [ordering].[SportStudent] AS [s0]
+    WHERE [s].[Id] = [s0].[StudentId]
+================================
+   var sports0 = _dbContext.Students.Where(x => _dbContext.SportStudent
+   .Select(p=>p.StudentId).Contains(x.Id)).ToList();
+--------------------------------------------------------
+SELECT [s].[Id], [s].[BirthDate], [s].[Images], [s].[Name]
+FROM [ordering].[Students] AS [s]
+WHERE [s].[Id] IN (
+    SELECT [s0].[StudentId]
+    FROM [ordering].[SportStudent] AS [s0]

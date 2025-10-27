@@ -1,0 +1,229 @@
+2025-10-20 11:40:10.636 +03:30 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Task`1 -> GenreDto
+System.Threading.Tasks.Task`1[[OrderServise.Domain.Entities.Genre, OrderServise.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> OrderService.Application.Features.Genres.Queries.Getgenre.GenreDto
+2025-10-20 11:40:11.872 +03:30 [ERR] stack trace-   at lambda_method106(Closure, Object, GenreDto, ResolutionContext)
+   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 52
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 11:49:45.759 +03:30 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Task`1 -> GenreDto
+System.Threading.Tasks.Task`1[[OrderServise.Domain.Entities.Genre, OrderServise.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> OrderService.Application.Features.Genres.Queries.Getgenre.GenreDto
+2025-10-20 11:49:45.932 +03:30 [ERR] stack trace-   at lambda_method47(Closure, Object, GenreDto, ResolutionContext)
+   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 52
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 12:50:31.508 +03:30 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Task`1 -> GenreDto
+System.Threading.Tasks.Task`1[[OrderServise.Domain.Entities.Genre, OrderServise.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> OrderService.Application.Features.Genres.Queries.Getgenre.GenreDto
+2025-10-20 12:50:31.520 +03:30 [ERR] stack trace-   at lambda_method47(Closure, Object, GenreDto, ResolutionContext)
+   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 52
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 12:54:17.175 +03:30 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Task`1 -> GenreDto
+System.Threading.Tasks.Task`1[[OrderServise.Domain.Entities.Genre, OrderServise.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> OrderService.Application.Features.Genres.Queries.Getgenre.GenreDto
+2025-10-20 12:54:17.382 +03:30 [ERR] stack trace-   at lambda_method47(Closure, Object, GenreDto, ResolutionContext)
+   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 52
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 13:00:15.801 +03:30 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+AsyncStateMachineBox`1 -> GenreDto
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[OrderServise.Domain.Entities.Genre, OrderServise.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Runtime.CompilerServices.IAsyncStateMachine, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] -> OrderService.Application.Features.Genres.Queries.Getgenre.GenreDto
+2025-10-20 13:00:36.467 +03:30 [ERR] stack trace-   at lambda_method52(Closure, Object, GenreDto, ResolutionContext)
+   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 52
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 13:01:10.712 +03:30 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+AsyncStateMachineBox`1 -> GenreDto
+System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1[[OrderServise.Domain.Entities.Genre, OrderServise.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Runtime.CompilerServices.IAsyncStateMachine, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]] -> OrderService.Application.Features.Genres.Queries.Getgenre.GenreDto
+2025-10-20 13:01:10.721 +03:30 [ERR] stack trace-   at lambda_method52(Closure, Object, GenreDto, ResolutionContext)
+   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 52
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 13:13:23.491 +03:30 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on majid:m@jid9050@localhost:6379:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 0s ago, last-write: 0s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 0s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: SpinningDown, last-in: 0, cur-in: 0, sync-ops: 1, async-ops: 0, serverEndpoint: majid:m@jid9050@localhost:6379:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: DESKTOP-CQ9FRIO(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=4,Max=32767), POOL: (Threads=5,QueuedItems=0,CompletedItems=140,Timers=14), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+2025-10-20 13:13:23.821 +03:30 [ERR] stack trace-   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2105
+   at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+   at StackExchange.Redis.RedisDatabase.HashGet(RedisKey key, RedisValue[] hashFields, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 407
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefresh(String key, Boolean getData)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.Get(String key)
+   at OrderService.Application.Redis.RedisExtention.TryGetValue[T](IDistributedCache cache, String key, T& value) in G:\nextjs\talajoorback8\OrderService.Application\Redis\RedisExtention.cs:line 42
+   at OrderService.Application.Redis.RedisExtention.GetSet[T](IDistributedCache cache, String key, Func`1 task, DistributedCacheEntryOptions options) in G:\nextjs\talajoorback8\OrderService.Application\Redis\RedisExtention.cs:line 60
+   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 44
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 13:15:45.276 +03:30 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on majid:m@jid9050@localhost:6379:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 0s ago, last-write: 0s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 0s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 0, qs: 0, aw: False, bw: SpinningDown, last-in: 0, cur-in: 0, sync-ops: 2, async-ops: 0, serverEndpoint: majid:m@jid9050@localhost:6379:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: DESKTOP-CQ9FRIO(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=4,Max=32767), POOL: (Threads=8,QueuedItems=0,CompletedItems=382,Timers=16), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+2025-10-20 13:15:45.346 +03:30 [ERR] stack trace-   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2105
+   at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+   at StackExchange.Redis.RedisDatabase.HashGet(RedisKey key, RedisValue[] hashFields, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 407
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefresh(String key, Boolean getData)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.Get(String key)
+   at OrderService.Application.Redis.RedisExtention.TryGetValue[T](IDistributedCache cache, String key, T& value) in G:\nextjs\talajoorback8\OrderService.Application\Redis\RedisExtention.cs:line 42
+   at OrderService.Application.Redis.RedisExtention.GetSet[T](IDistributedCache cache, String key, Func`1 task, DistributedCacheEntryOptions options) in G:\nextjs\talajoorback8\OrderService.Application\Redis\RedisExtention.cs:line 60
+   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 44
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 13:21:55.165 +03:30 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: UnableToConnect on majid:majid9050@localhost:6379:6379/Interactive, Initializing/NotStarted, last: NONE, origin: BeginConnectAsync, outstanding: 0, last-read: 0s ago, last-write: 0s ago, keep-alive: 60s, state: Connecting, mgr: 10 of 10 available, last-heartbeat: never, global: 0s ago, v: 2.7.27.49176, command=HMGET, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: SpinningDown, last-in: 0, cur-in: 0, sync-ops: 1, async-ops: 0, serverEndpoint: majid:majid9050@localhost:6379:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: DESKTOP-CQ9FRIO(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=4,Max=32767), POOL: (Threads=5,QueuedItems=0,CompletedItems=140,Timers=14), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+2025-10-20 13:21:55.375 +03:30 [ERR] stack trace-   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2105
+   at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+   at StackExchange.Redis.RedisDatabase.HashGet(RedisKey key, RedisValue[] hashFields, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 407
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefresh(String key, Boolean getData)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.Get(String key)
+   at OrderService.Application.Redis.RedisExtention.TryGetValue[T](IDistributedCache cache, String key, T& value) in G:\nextjs\talajoorback8\OrderService.Application\Redis\RedisExtention.cs:line 42
+   at OrderService.Application.Redis.RedisExtention.GetSet[T](IDistributedCache cache, String key, Func`1 task, DistributedCacheEntryOptions options) in G:\nextjs\talajoorback8\OrderService.Application\Redis\RedisExtention.cs:line 60
+   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 44
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 13:25:18.728 +03:30 [ERR] The message timed out in the backlog attempting to send because no connection became available (5000ms) - Last Connection Exception: It was not possible to connect to the redis server(s). ConnectTimeout, command=HMGET, timeout: 5000, inst: 0, qu: 1, qs: 0, aw: False, bw: SpinningDown, last-in: 0, cur-in: 0, sync-ops: 2, async-ops: 0, serverEndpoint: majid:majid9050@localhost:6379:6379, conn-sec: n/a, aoc: 0, mc: 1/1/0, mgr: 10 of 10 available, clientName: DESKTOP-CQ9FRIO(SE.Redis-v2.7.27.49176), IOCP: (Busy=0,Free=1000,Min=1,Max=1000), WORKER: (Busy=2,Free=32765,Min=4,Max=32767), POOL: (Threads=6,QueuedItems=0,CompletedItems=993,Timers=13), v: 2.7.27.49176 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts)
+2025-10-20 13:25:18.765 +03:30 [ERR] stack trace-   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/ConnectionMultiplexer.cs:line 2105
+   at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server, T defaultValue) in /_/src/StackExchange.Redis/RedisBase.cs:line 62
+   at StackExchange.Redis.RedisDatabase.HashGet(RedisKey key, RedisValue[] hashFields, CommandFlags flags) in /_/src/StackExchange.Redis/RedisDatabase.cs:line 407
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.GetAndRefresh(String key, Boolean getData)
+   at Microsoft.Extensions.Caching.StackExchangeRedis.RedisCache.Get(String key)
+   at OrderService.Application.Redis.RedisExtention.TryGetValue[T](IDistributedCache cache, String key, T& value) in G:\nextjs\talajoorback8\OrderService.Application\Redis\RedisExtention.cs:line 42
+   at OrderService.Application.Redis.RedisExtention.GetSet[T](IDistributedCache cache, String key, Func`1 task, DistributedCacheEntryOptions options) in G:\nextjs\talajoorback8\OrderService.Application\Redis\RedisExtention.cs:line 60
+   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 44
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 13:34:26.514 +03:30 [WRN] یافت نشد
+2025-10-20 13:34:26.706 +03:30 [ERR] stack trace-   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 50
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 13:46:49.928 +03:30 [WRN] یافت نشد
+2025-10-20 13:46:50.988 +03:30 [ERR] stack trace-   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 67
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 13:47:50.083 +03:30 [ERR] Missing type map configuration or unsupported mapping.
+
+Mapping types:
+List`1 -> GenreDto
+System.Collections.Generic.List`1[[OrderServise.Domain.Entities.Genre, OrderServise.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> OrderService.Application.Features.Genres.Queries.Getgenre.GenreDto
+2025-10-20 13:47:50.091 +03:30 [ERR] stack trace-   at lambda_method73(Closure, Object, GenreDto, ResolutionContext)
+   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Features\Genres\Queries\Getgenre\GetGenreHandler.cs:line 69
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback8\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2025-10-20 13:48:39.007 +03:30 [WRN] یافت نشد
+2025-10-20 13:48:39.016 +03:30 [ERR] stack trace-   at OrderService.Application.Features.Genres.Queries.Getgenre.GetGenreHandler.Handle(GetGenreQuery request, CancellationToken cancellationToken)
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken)
+   at OrderService.API.Controllers.GenreController.Get(Int32 id) in G:\nextjs\talajoorback8\OrderService.API\Controllers\GenreController.cs:line 44
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)

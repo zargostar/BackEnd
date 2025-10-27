@@ -1,0 +1,30 @@
+public class Product
+{
+    public int Id { get; set; }
+
+    public string Name { get; set; }
+
+    // Primitive collection stored as JSON
+    public List<string> Tags { get; set; } = new();
+}
+===============
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
+
+public class AppDbContext : DbContext
+{
+    public DbSet<Product> Products { get; set; }
+
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Product>()
+            .Property(p => p.Tags)
+            .HasConversion(
+                v => JsonSerializer.Serialize(v, (JsonSerializerOptions)null),
+                v => JsonSerializer.Deserialize<List<string>>(v, (JsonSerializerOptions)null) ?? new()
+            )
+            .HasColumnType("nvarchar(max)");
+    }
+}

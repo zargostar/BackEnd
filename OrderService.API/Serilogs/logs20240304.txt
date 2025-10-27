@@ -1,0 +1,190 @@
+2024-03-04 08:50:22.123 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-04 08:50:22.522 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-04 08:50:23.524 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-04 08:50:23.526 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-04 08:50:23.528 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-04 08:50:25.807 +03:30 [INF] Server desktop-cq9frio:10856:af68a5f3 successfully announced in 2201.7333 ms
+2024-03-04 08:50:25.826 +03:30 [INF] Server desktop-cq9frio:10856:af68a5f3 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-04 08:50:25.862 +03:30 [INF] 2 servers were removed due to timeout
+2024-03-04 08:50:26.175 +03:30 [INF] Server desktop-cq9frio:10856:af68a5f3 all the dispatchers started
+2024-03-04 09:00:49.922 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 09:00:49.933 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 12:30:58.568 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-04 12:30:58.916 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-04 12:30:59.681 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-04 12:30:59.694 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-04 12:30:59.696 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-04 12:31:01.454 +03:30 [INF] Server desktop-cq9frio:3048:7237d04e successfully announced in 1657.2814 ms
+2024-03-04 12:31:01.484 +03:30 [INF] Server desktop-cq9frio:3048:7237d04e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-04 12:31:01.574 +03:30 [INF] 1 servers were removed due to timeout
+2024-03-04 12:31:02.064 +03:30 [INF] Server desktop-cq9frio:3048:7237d04e all the dispatchers started
+2024-03-04 12:31:27.363 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 12:31:27.369 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:22:47.536 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-04 19:22:47.942 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-04 19:22:48.939 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-04 19:22:48.942 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-04 19:22:48.944 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-04 19:22:49.645 +03:30 [INF] Server desktop-cq9frio:9944:8cf2f7d0 successfully announced in 627.0225 ms
+2024-03-04 19:22:49.658 +03:30 [INF] Server desktop-cq9frio:9944:8cf2f7d0 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-04 19:22:49.705 +03:30 [INF] 1 servers were removed due to timeout
+2024-03-04 19:22:51.692 +03:30 [INF] Server desktop-cq9frio:9944:8cf2f7d0 all the dispatchers started
+2024-03-04 19:24:24.656 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:24:24.664 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:41:32.467 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-04 19:41:32.724 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-04 19:41:33.170 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-04 19:41:33.191 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-04 19:41:33.193 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-04 19:41:33.490 +03:30 [INF] Server desktop-cq9frio:13572:9ad60e87 successfully announced in 246.5938 ms
+2024-03-04 19:41:33.499 +03:30 [INF] Server desktop-cq9frio:13572:9ad60e87 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-04 19:41:35.398 +03:30 [INF] Server desktop-cq9frio:13572:9ad60e87 all the dispatchers started
+2024-03-04 19:42:00.095 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:42:00.100 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:42:18.493 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:42:18.495 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:44:16.730 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:44:16.732 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:46:33.717 +03:30 [INF] 1 servers were removed due to timeout
+2024-03-04 19:48:08.816 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:48:08.818 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:57:54.055 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-04 19:57:54.307 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-04 19:57:54.767 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-04 19:57:54.769 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-04 19:57:54.771 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-04 19:57:56.156 +03:30 [INF] Server desktop-cq9frio:18764:1497e848 successfully announced in 1333.5015 ms
+2024-03-04 19:57:56.195 +03:30 [INF] Server desktop-cq9frio:18764:1497e848 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-04 19:57:56.223 +03:30 [INF] 1 servers were removed due to timeout
+2024-03-04 19:57:56.561 +03:30 [INF] Server desktop-cq9frio:18764:1497e848 all the dispatchers started
+2024-03-04 19:58:24.176 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 19:58:24.183 +03:30 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-03-04 20:42:16.154 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-04 20:42:16.390 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-04 20:42:16.833 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-04 20:42:16.834 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-04 20:42:16.836 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-04 20:42:17.039 +03:30 [INF] Server desktop-cq9frio:7812:4fb2418c successfully announced in 174.391 ms
+2024-03-04 20:42:17.049 +03:30 [INF] Server desktop-cq9frio:7812:4fb2418c is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-04 20:42:17.074 +03:30 [INF] 1 servers were removed due to timeout
+2024-03-04 20:42:17.252 +03:30 [INF] Server desktop-cq9frio:7812:4fb2418c all the dispatchers started
+2024-03-04 20:57:56.600 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-04 20:57:56.823 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-04 20:57:57.264 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-04 20:57:57.266 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-04 20:57:57.267 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-04 20:57:58.816 +03:30 [INF] Server desktop-cq9frio:11596:80c81c1f successfully announced in 1506.0737 ms
+2024-03-04 20:57:58.905 +03:30 [INF] Server desktop-cq9frio:11596:80c81c1f is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-04 20:57:58.946 +03:30 [INF] 1 servers were removed due to timeout
+2024-03-04 20:57:59.300 +03:30 [INF] Server desktop-cq9frio:11596:80c81c1f all the dispatchers started
+2024-03-04 21:07:55.227 +03:30 [ERR] Failed executing DbCommand (27ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Double), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = Double), @p7='?' (DbType = Int32), @p6='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ordering].[ProductSize] ([ProductId], [SizeId], [Weight])
+VALUES (@p0, @p1, @p2),
+(@p3, @p4, @p5);
+UPDATE [ordering].[Products] SET [Name] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2024-03-04 21:07:55.296 +03:30 [ERR] An exception occurred in the database while saving changes for context type 'OrderServise.Infrastructure.Persistance.DataBaseContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_ProductSize'. Cannot insert duplicate key in object 'ordering.ProductSize'. The duplicate key value is (1, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b887d8a6-7cdd-41ed-9903-f28e0827ca65
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Violation of PRIMARY KEY constraint 'PK_ProductSize'. Cannot insert duplicate key in object 'ordering.ProductSize'. The duplicate key value is (1, 1).
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b887d8a6-7cdd-41ed-9903-f28e0827ca65
+Error Number:2627,State:1,Class:14
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-03-04 21:07:55.737 +03:30 [ERR] An error occurred while saving the entity changes. See the inner exception for details.
+2024-03-04 21:07:55.763 +03:30 [ERR] stack trace-   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at OrderServise.Infrastructure.Repositories.BaseRepositoryAsync`1.UpdateAsync(T entity) in G:\nextjs\talajoorback\OrderServise.Infrastructure\Repositories\BaseRepositoryAsync.cs:line 78
+   at OrderService.Application.Features.Products.Command.UpdateProduct.UpdateProductCommandHandler.Handle(UpdateProductCommand request, CancellationToken cancellationToken) in G:\nextjs\talajoorback\OrderService.Application\Features\Products\Command\UpdateProduct\UpdateProductCommandHandler.cs:line 28
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at OrderService.Application.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken cancellationToken) in G:\nextjs\talajoorback\OrderService.Application\Behaviours\ValidationBehaviour.cs:line 35
+   at OrderService.API.Controllers.ProductController.Put(UpdateProductCommand updateProduct)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)

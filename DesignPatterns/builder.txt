@@ -1,0 +1,88 @@
+if we have a class with complexe activity we use builder design pattern
+============================
+each property is created in complex logic
+namespace MyReportApi.Models;
+
+public class Report
+{
+    public string Header { get; set; }
+    public string Body { get; set; }
+    public string Footer { get; set; }
+}
+=====================
+using MyReportApi.Models;
+
+namespace MyReportApi.Interfaces;
+
+public interface IReportBuilder
+{
+    void BuildHeader();
+    void BuildBody();
+    void BuildFooter();
+    Report GetReport();
+}
+===============================
+
+using MyReportApi.Interfaces;
+using MyReportApi.Models;
+
+namespace MyReportApi.Builders;
+
+public class PdfReportBuilder : IReportBuilder
+{
+    private Report _report = new();
+
+    public void BuildHeader() => _report.Header = "PDF Report Header";
+    public void BuildBody() => _report.Body = "PDF Report Body Content";
+    public void BuildFooter() => _report.Footer = "PDF Report Footer";
+    public Report GetReport() => _report;
+}
+================
+using MyReportApi.Interfaces;
+using MyReportApi.Models;
+
+namespace MyReportApi.Directors;
+
+public class ReportDirector
+{
+    private readonly IReportBuilder _builder;
+
+    public ReportDirector(IReportBuilder builder)
+    {
+        _builder = builder;
+    }
+
+    public Report ConstructReport()
+    {
+        _builder.BuildHeader();
+        _builder.BuildBody();
+        _builder.BuildFooter();
+        return _builder.GetReport();
+    }
+}
+======================
+using Microsoft.AspNetCore.Mvc;
+using MyReportApi.Directors;
+using MyReportApi.Models;
+
+namespace MyReportApi.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class ReportController : ControllerBase
+{
+    private readonly ReportDirector _director;
+
+    public ReportController(ReportDirector director)
+    {
+        _director = director;
+    }
+
+    [HttpGet]
+    public ActionResult<Report> Get()
+    {
+        var report = _director.ConstructReport();
+        return Ok(report);
+    }
+}
+

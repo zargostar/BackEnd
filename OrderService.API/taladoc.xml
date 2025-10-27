@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OrderService.API</name>
+    </assembly>
+    <members>
+        <member name="M:OrderService.API.Controllers.GenreController.Get(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OrderService.API.Controllers.ResumeController">
+            <summary>
+            ljiojhiu
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:OrderService.API.Controllers.ResumeController.#ctor(MediatR.IMediator)">
+            <summary>
+            ljiojhiu
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:OrderService.API.Controllers.ResumeController.Post(OrderService.Application.Features.Resumes.Commands.ResumeCreate.ResumeCreateCommand)">
+            <summary>
+            jyguyg
+            </summary>
+            <param name="resume"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OrderService.API.Controllers.StatesController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OrderService.API.Controllers.StatesController.#ctor(MediatR.IMediator)">
+            <summary>
+            
+            </summary>
+            <param name="mediator"></param>
+        </member>
+        <member name="M:OrderService.API.Controllers.StatesController.Get">
+            <summary>
+            
+            jhuhuhui
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OrderService.API.Controllers.StudentController.Delete(System.Int32)">
+            <summary>
+            fghhty
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OrderService.API.Controllers.StudentController.CreateStudentListIds(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            در صورت بروز خطا تسک کلا کنسل می شود
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

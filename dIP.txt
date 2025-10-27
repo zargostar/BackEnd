@@ -1,0 +1,12 @@
+we can inject services which were addee to ioc in three way
+1-in instractor
+2- as variable in method with ["fromservices"]
+public CreateUser(useDto user,["FromServices"] IsendMessage send)
+{
+send(use.name)
+}
+==========
+with service Collector we can use services which das been added to ioc
+var messageService=HttpContect.RequesteServices.GetService<ISendMessage>()
+messageservice.send("yutgtr67")
+================

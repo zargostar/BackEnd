@@ -1,0 +1,124 @@
+using System;
+using System.Collections.Generic;
+using Microsoft.Extensions.DependencyInjection;
+
+// Step 1: Define the interface for the product
+public interface IShape
+{
+    void Draw();
+}
+
+// Step 2: Implement concrete classes
+public class Circle : IShape
+{
+    public void Draw() => Console.WriteLine("Drawing a Circle");
+}
+
+public class Square : IShape
+{
+    public void Draw() => Console.WriteLine("Drawing a Square");
+}
+
+public class Rectangle : IShape
+{
+    public void Draw() => Console.WriteLine("Drawing a Rectangle");
+}
+
+// Step 3: Define the factory interface
+public interface IShapeFactory
+{
+    IShape GetShape(string shapeType);
+}
+
+// Step 4: Implement the factory with injected services
+public class ShapeFactory : IShapeFactory
+{
+    private readonly IServiceProvider _serviceProvider;
+    private readonly IDictionary<string, Type> _shapeTypes;
+
+    public ShapeFactory(IServiceProvider serviceProvider)
+    {
+        _serviceProvider = serviceProvider;
+
+        // Map string keys to concrete types
+        _shapeTypes = new Dictionary<string, Type>(StringComparer.OrdinalIgnoreCase)
+        {
+            { "circle", typeof(Circle) },
+            { "square", typeof(Square) },
+            { "rectangle", typeof(Rectangle) }
+        };
+    }
+
+    public IShape GetShape(string shapeType)
+    {
+        if (_shapeTypes.TryGetValue(shapeType, out var type))
+        {
+            // Use DI container to create instance
+            return _serviceProvider.GetRequiredService(type) as IShape;
+        }
+
+        throw new ArgumentException($"Shape type '{shapeType}' is not registered.");
+    }
+}
+
+// Step 5: Setup DI container and use the factory
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Setup DI container
+        var services = new ServiceCollection();
+
+        // Register all shapes as transient services
+        services.AddTransient<Circle>();
+        services.AddTransient<Square>();
+        services.AddTransient<Rectangle>();
+
+        // Register factory
+        services.AddSingleton<IShapeFactory, ShapeFactory>();
+
+        // Build service provider
+        var serviceProvider = services.BuildServiceProvider();
+
+        // Resolve factory from DI container
+        var factory = serviceProvider.GetRequiredService<IShapeFactory>();
+
+        // Use the factory
+        var shape1 = factory.GetShape("circle");
+        shape1.Draw();  // Output: Drawing a Circle
+
+        var shape2 = factory.GetShape("square");
+        shape2.Draw();  // Output: Drawing a Square
+
+        var shape3 = factory.GetShape("rectangle");
+        shape3.Draw();  // Output: Drawing a Rectangle
+    }
+}
+================
+public class ShapeFactory : IShapeFactory
+{
+    private readonly IServiceProvider _serviceProvider;
+
+    public ShapeFactory(IServiceProvider serviceProvider)
+    {
+        _serviceProvider = serviceProvider;
+    }
+
+    public IShape GetShape(string shapeType)
+    {
+        Type type = shapeType.ToLower() switch
+        {
+            "circle" => typeof(Circle),
+            "square" => typeof(Square),
+            "rectangle" => typeof(Rectangle),
+            _ => throw new ArgumentException($"Shape type '{shapeType}' is not registered.")
+        };
+
+        return _serviceProvider.GetRequiredService(type) as IShape;
+    }
+}
+===============
+relational patern
+if(order is {Total>100}){
+}
+====================

@@ -1,0 +1,58 @@
+2024-08-09 01:22:06.635 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-09 01:22:07.092 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-09 01:22:07.393 +03:30 [INF] start hangfir
+2024-08-09 01:22:09.461 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-09 01:22:09.463 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-09 01:22:09.464 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-09 01:22:09.563 +03:30 [INF] Server desktop-cq9frio:21492:f972c901 successfully announced in 28.0327 ms
+2024-08-09 01:22:09.579 +03:30 [INF] Server desktop-cq9frio:21492:f972c901 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-09 01:22:09.606 +03:30 [INF] 1 servers were removed due to timeout
+2024-08-09 01:22:09.857 +03:30 [INF] Server desktop-cq9frio:21492:f972c901 all the dispatchers started
+2024-08-09 01:22:12.399 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:23:10.669 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:24:10.728 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:25:10.802 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:26:10.849 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:27:10.916 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:28:10.967 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:29:11.038 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:30:11.114 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:31:11.197 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:32:11.280 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:33:11.363 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:47:45.666 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-09 01:47:45.916 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-09 01:47:45.975 +03:30 [INF] start hangfir
+2024-08-09 01:47:46.629 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-09 01:47:46.631 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-09 01:47:46.632 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-09 01:47:46.697 +03:30 [INF] Server desktop-cq9frio:4316:1c6c3087 successfully announced in 21.1502 ms
+2024-08-09 01:47:46.708 +03:30 [INF] Server desktop-cq9frio:4316:1c6c3087 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-09 01:47:46.724 +03:30 [INF] 1 servers were removed due to timeout
+2024-08-09 01:47:48.309 +03:30 [INF] Server desktop-cq9frio:4316:1c6c3087 all the dispatchers started
+2024-08-09 01:47:48.955 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:48:03.717 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:49:49.424 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-08-09 01:49:49.857 +03:30 [INF] Hangfire SQL objects installed.
+2024-08-09 01:49:49.920 +03:30 [INF] start hangfir
+2024-08-09 01:49:50.533 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-08-09 01:49:50.535 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-08-09 01:49:50.537 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-08-09 01:49:50.603 +03:30 [INF] Server desktop-cq9frio:15608:a94d1836 successfully announced in 21.0458 ms
+2024-08-09 01:49:50.644 +03:30 [INF] Server desktop-cq9frio:15608:a94d1836 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-08-09 01:49:52.275 +03:30 [INF] Server desktop-cq9frio:15608:a94d1836 all the dispatchers started
+2024-08-09 01:49:52.834 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:50:12.182 +03:30 [ERR] test jjjjj send Email
+2024-08-09 01:51:06.678 +03:30 [ERR] test jjjjj send Email

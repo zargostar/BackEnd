@@ -1,0 +1,59 @@
+‌ in program.cs
+============
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+
+    var context = services.GetRequiredService<DataBaseContext>();
+    //var hangfireService = services.GetRequiredService<ReOccuringSendMessage>();
+    //hangfireService.SendEmail();
+    //await context.Database.MigrateAsync();
+    await context.Database.MigrateAsync();
+    await SeedData.SeedDataLast(context);
+    await SeedData.SeedUserAppData(app)
+    ;
+}
+===================
+in hosted service
+--------
+public class DIHostedService : IHostedService
+{
+	protected readonly IServiceProvider _serviceProvider;
+
+	public DIHostedService(IServiceProvider serviceProvider)
+	{
+		_serviceProvider = serviceProvider;
+	}
+
+	public Task StartAsync(CancellationToken cancellationToken)
+	{
+		using (var scope = _serviceProvider.CreateScope())
+		{
+			var singletonService = scope.ServiceProvider.GetRequiredService<ISingletonService>();
+			var scopedService = scope.ServiceProvider.GetRequiredService<IScopedService>();
+			var transientService = scope.ServiceProvider.GetRequiredService<ITransientService>();
+
+			Debug.WriteLine(string.Format("Singleton time is {0}", singletonService.Time));
+			Debug.WriteLine(string.Format("Scoped time is {0}", scopedService.Time));
+			Debug.WriteLine(string.Format("Transient time is {0}", transientService.Time));
+		}
+
+		using (var scope = _serviceProvider.CreateScope())
+		{
+			var singletonService = scope.ServiceProvider.GetRequiredService<ISingletonService>();
+			var scopedService = scope.ServiceProvider.GetRequiredService<IScopedService>();
+			var transientService = scope.ServiceProvider.GetRequiredService<ITransientService>();
+
+			Debug.WriteLine(string.Format("Singleton time is {0}", singletonService.Time));
+			Debug.WriteLine(string.Format("Scoped time is {0}", scopedService.Time));
+			Debug.WriteLine(string.Format("Transient time is {0}", transientService.Time));
+		}
+
+		return Task.CompletedTask;
+	}
+
+	public Task StopAsync(CancellationToken cancellationToken)
+	{
+		return Task.CompletedTask;
+	}
+}

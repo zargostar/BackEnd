@@ -1,0 +1,19 @@
+public class MyEntity
+{
+    public int Id { get; set; }
+    public MyJsonData JsonData { get; set; }
+}
+
+[Owned]
+public class MyJsonData
+{
+    public string Prop1 { get; set; }
+    public int Prop2 { get; set; }
+}
+
+protected override void OnModelCreating(ModelBuilder modelBuilder)
+{
+    modelBuilder.Entity<MyEntity>()
+        .OwnsOne(e => e.JsonData)
+        .ToJson();  // (Npgsql-specific extension to store owned entity as JSON)
+}

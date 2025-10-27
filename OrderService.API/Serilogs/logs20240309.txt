@@ -1,0 +1,228 @@
+2024-03-09 10:56:33.020 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-09 10:56:33.387 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-09 10:56:34.494 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-09 10:56:34.496 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-09 10:56:34.498 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-09 10:56:34.952 +03:30 [INF] Server desktop-cq9frio:11824:758599e6 successfully announced in 389.6195 ms
+2024-03-09 10:56:34.961 +03:30 [INF] Server desktop-cq9frio:11824:758599e6 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-09 10:56:35.269 +03:30 [INF] Server desktop-cq9frio:11824:758599e6 all the dispatchers started
+2024-03-09 10:57:33.560 +03:30 [ERR] Value cannot be null. (Parameter 'path1')
+2024-03-09 10:57:33.593 +03:30 [ERR] stack trace-   at System.ArgumentNullException.Throw(String paramName)
+   at System.IO.Path.Combine(String path1, String path2)
+   at OrderService.API.Helpers.FileStorage.AppLocalStorageService.SaveFile(IFormFile file, String container) in G:\nextjs\talajoorback\OrderService.API\Helpers\FileStorage\AppLocalStorageService.cs:line 42
+   at OrderService.API.Controllers.ProductController.UploadImage(ImageUploadDto image) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 10:58:17.293 +03:30 [ERR] Value cannot be null. (Parameter 'path1')
+2024-03-09 10:58:17.306 +03:30 [ERR] stack trace-   at System.ArgumentNullException.Throw(String paramName)
+   at System.IO.Path.Combine(String path1, String path2)
+   at OrderService.API.Helpers.FileStorage.AppLocalStorageService.SaveFile(IFormFile file, String container) in G:\nextjs\talajoorback\OrderService.API\Helpers\FileStorage\AppLocalStorageService.cs:line 42
+   at OrderService.API.Controllers.ProductController.UploadImage(ImageUploadDto image) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 10:58:52.767 +03:30 [ERR] Value cannot be null. (Parameter 'path1')
+2024-03-09 10:58:52.778 +03:30 [ERR] stack trace-   at System.ArgumentNullException.Throw(String paramName)
+   at System.IO.Path.Combine(String path1, String path2)
+   at OrderService.API.Helpers.FileStorage.AppLocalStorageService.SaveFile(IFormFile file, String container) in G:\nextjs\talajoorback\OrderService.API\Helpers\FileStorage\AppLocalStorageService.cs:line 42
+   at OrderService.API.Controllers.ProductController.UploadImage(ImageUploadDto image) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 11:00:06.863 +03:30 [ERR] Value cannot be null. (Parameter 'path1')
+2024-03-09 11:00:06.875 +03:30 [ERR] stack trace-   at System.ArgumentNullException.Throw(String paramName)
+   at System.IO.Path.Combine(String path1, String path2)
+   at OrderService.API.Helpers.FileStorage.AppLocalStorageService.SaveFile(IFormFile file, String container) in G:\nextjs\talajoorback\OrderService.API\Helpers\FileStorage\AppLocalStorageService.cs:line 42
+   at OrderService.API.Controllers.ProductController.UploadImage(ImageUploadDto image) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 11:04:55.781 +03:30 [ERR] Value cannot be null. (Parameter 'path1')
+2024-03-09 11:04:55.785 +03:30 [ERR] stack trace-   at System.ArgumentNullException.Throw(String paramName)
+   at System.IO.Path.Combine(String path1, String path2)
+   at OrderService.API.Helpers.FileStorage.AppLocalStorageService.SaveFile(IFormFile file, String container) in G:\nextjs\talajoorback\OrderService.API\Helpers\FileStorage\AppLocalStorageService.cs:line 42
+   at OrderService.API.Controllers.ProductController.UploadImage(ImageUploadDto image) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 11:05:34.385 +03:30 [ERR] Value cannot be null. (Parameter 'path1')
+2024-03-09 11:05:34.388 +03:30 [ERR] stack trace-   at System.ArgumentNullException.Throw(String paramName)
+   at System.IO.Path.Combine(String path1, String path2)
+   at OrderService.API.Helpers.FileStorage.AppLocalStorageService.SaveFile(IFormFile file, String container) in G:\nextjs\talajoorback\OrderService.API\Helpers\FileStorage\AppLocalStorageService.cs:line 42
+   at OrderService.API.Controllers.ProductController.UploadImage(ImageUploadDto image) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 53
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 11:10:32.709 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-09 11:10:32.970 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-09 11:10:33.370 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-09 11:10:33.372 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-09 11:10:33.374 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-09 11:10:33.655 +03:30 [INF] Server desktop-cq9frio:6124:ed12b3c4 successfully announced in 236.0365 ms
+2024-03-09 11:10:33.665 +03:30 [INF] Server desktop-cq9frio:6124:ed12b3c4 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-09 11:10:35.152 +03:30 [INF] Server desktop-cq9frio:6124:ed12b3c4 all the dispatchers started
+2024-03-09 11:33:16.085 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-09 11:33:16.393 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-09 11:33:16.769 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-09 11:33:16.772 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-09 11:33:16.774 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-09 11:33:17.067 +03:30 [INF] Server desktop-cq9frio:20868:600f1133 successfully announced in 260.2833 ms
+2024-03-09 11:33:17.230 +03:30 [INF] Server desktop-cq9frio:20868:600f1133 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-09 11:33:17.277 +03:30 [INF] 2 servers were removed due to timeout
+2024-03-09 11:33:17.546 +03:30 [INF] Server desktop-cq9frio:20868:600f1133 all the dispatchers started
+2024-03-09 11:35:52.675 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-09 11:35:52.906 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-09 11:35:53.280 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-09 11:35:53.282 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-09 11:35:53.285 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-09 11:35:53.512 +03:30 [INF] Server desktop-cq9frio:7180:dcfc9663 successfully announced in 196.7162 ms
+2024-03-09 11:35:53.524 +03:30 [INF] Server desktop-cq9frio:7180:dcfc9663 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-09 11:35:53.945 +03:30 [INF] Server desktop-cq9frio:7180:dcfc9663 all the dispatchers started
+2024-03-09 11:40:53.542 +03:30 [INF] 1 servers were removed due to timeout
+2024-03-09 12:50:12.761 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-09 12:50:13.061 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-09 12:50:13.730 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-09 12:50:13.732 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-09 12:50:13.734 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-09 12:50:14.092 +03:30 [INF] Server desktop-cq9frio:17776:01ffea5e successfully announced in 309.6364 ms
+2024-03-09 12:50:14.103 +03:30 [INF] Server desktop-cq9frio:17776:01ffea5e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-09 12:50:15.595 +03:30 [INF] Server desktop-cq9frio:17776:01ffea5e all the dispatchers started
+2024-03-09 12:55:14.133 +03:30 [INF] 1 servers were removed due to timeout
+2024-03-09 13:26:44.989 +03:30 [WRN]  hfytyytf
+2024-03-09 13:26:45.004 +03:30 [ERR] stack trace-   at OrderService.API.Controllers.ProductController.Post(CreateProductCommand create)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 13:27:32.232 +03:30 [WRN]  hfytyytf
+2024-03-09 13:27:32.236 +03:30 [ERR] stack trace-   at OrderService.API.Controllers.ProductController.Post(CreateProductCommand create)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 13:29:04.965 +03:30 [WRN]  hfytyytf
+2024-03-09 13:29:04.967 +03:30 [ERR] stack trace-   at OrderService.API.Controllers.ProductController.Post(CreateProductCommand create)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 13:33:58.041 +03:30 [WRN]  hfytyytf
+2024-03-09 13:33:58.044 +03:30 [ERR] stack trace-   at OrderService.API.Controllers.ProductController.Post(CreateProductCommand create)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 13:42:52.785 +03:30 [WRN]  hfytyytf
+2024-03-09 13:42:52.789 +03:30 [ERR] stack trace-   at OrderService.API.Controllers.ProductController.Post(CreateProductCommand create)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 14:58:03.193 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-09 14:58:03.612 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-09 14:58:03.969 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-09 14:58:03.971 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-09 14:58:03.973 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-09 14:58:04.398 +03:30 [INF] Server desktop-cq9frio:24864:cfbafb51 successfully announced in 395.4093 ms
+2024-03-09 14:58:04.414 +03:30 [INF] Server desktop-cq9frio:24864:cfbafb51 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-09 14:58:04.691 +03:30 [INF] Server desktop-cq9frio:24864:cfbafb51 all the dispatchers started
+2024-03-09 15:03:04.457 +03:30 [INF] 1 servers were removed due to timeout
+2024-03-09 15:36:32.725 +03:30 [INF] Start installing Hangfire SQL objects...
+2024-03-09 15:36:33.021 +03:30 [INF] Hangfire SQL objects installed.
+2024-03-09 15:36:33.411 +03:30 [INF] Starting Hangfire Server using job storage: 'SQL Server: DESKTOP-CQ9FRIO\SQLEXPRESS@hangfire'
+2024-03-09 15:36:33.417 +03:30 [INF] Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2024-03-09 15:36:33.419 +03:30 [INF] Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2024-03-09 15:36:33.843 +03:30 [INF] Server desktop-cq9frio:11384:43388904 successfully announced in 360.8289 ms
+2024-03-09 15:36:33.867 +03:30 [INF] Server desktop-cq9frio:11384:43388904 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, SqlServerHeartbeatProcess, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2024-03-09 15:36:34.128 +03:30 [INF] Server desktop-cq9frio:11384:43388904 all the dispatchers started
+2024-03-09 15:41:33.913 +03:30 [INF] 1 servers were removed due to timeout
+2024-03-09 15:44:43.460 +03:30 [WRN]  hfytyytf
+2024-03-09 15:44:43.488 +03:30 [ERR] stack trace-   at OrderService.API.Controllers.ProductController.Post(CreateProductCommand create) in G:\nextjs\talajoorback\OrderService.API\Controllers\ProductController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|26_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+2024-03-09 15:52:39.832 +03:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2024-03-09 15:53:25.452 +03:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
