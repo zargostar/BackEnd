@@ -1,0 +1,11 @@
+services:
+  orderservice.api:
+    image: ${DOCKER_REGISTRY-}orderserviceapi
+    build:
+      context: .
+      dockerfile: OrderService.API/Dockerfile
+  redisdb:
+    image: redis
+  sqlserverdb:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+

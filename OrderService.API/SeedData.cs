@@ -20,6 +20,18 @@ namespace OrderService.API
                         FirstName = "admin",
                         LastName = "admin",
                         UserName = "admin",
+                        Address=new Address()
+                        {
+                            HomeAddresses= new AddressDetail("jghuyguy55", "jyguyguy55", "grdtrdtr55"),
+                            WorkAddresses =new AddressDetail("jghuyguy","jyguyguy","grdtrdtr")
+                            //WorkAddresses=new AddressDetail()
+                            //{
+                            //    City = "oo",
+                            //    PostalCode = "4444",
+                            //    Street = "uiy8"
+
+                            //}
+                        },
 
                     };
                  

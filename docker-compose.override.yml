@@ -1,0 +1,34 @@
+volumes:
+  redis_data:
+  sql_data:
+services:
+  orderservice.api:
+    container_name: ordering.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5001
+      - "sqlConnection=server=orderdb;User Id=sa;Password=M@jid9050;Encrypt=True;TrustServerCertificate=True;"
+      - "RedisDb=catchdb:6379,password=majid9050"
+    ports:
+      - "5001"
+  redisdb:
+    container_name: catchdb
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    command: >
+      redis-server
+      --requirepass majid9050
+    volumes:
+      - redis_data:/data
+  sqlserverdb :
+    container_name: orderdb
+    restart: unless-stopped
+    environment:
+      SA_PASSWORD: "M@jid9050"
+      ACCEPT_EULA: "Y"
+
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
