@@ -11,6 +11,9 @@ services:
       - "RedisDb=catchdb:6379,password=majid9050"
     ports:
       - "5001:8080"
+    depends_on: 
+      - redisdb
+      - sqlserverdb
   redisdb:
     container_name: catchdb
     restart: unless-stopped

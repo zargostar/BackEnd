@@ -52,3 +52,15 @@ System.InvalidOperationException: The complex type property 'AppUser.Address' is
 2025-10-27 07:04:23.173 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
 2025-10-27 07:04:23.296 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
 2025-10-27 07:04:23.600 +00:00 [WRN] No XML encryptor configured. Key {9215eb85-3058-4028-a677-aa221b362541} may be persisted to storage in unencrypted form.
+2025-10-27 07:05:43.006 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
+2025-10-27 07:05:43.113 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2025-10-27 07:05:43.709 +00:00 [WRN] No XML encryptor configured. Key {2d4cf40b-4c0f-4b12-98b8-ef5a6f523364} may be persisted to storage in unencrypted form.
+2025-10-27 07:06:49.358 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
+2025-10-27 07:06:49.420 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2025-10-27 07:06:49.779 +00:00 [WRN] No XML encryptor configured. Key {714abf43-edc6-4319-887f-30d07f7634a9} may be persisted to storage in unencrypted form.
+2025-10-27 07:08:02.006 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
+2025-10-27 07:08:02.066 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2025-10-27 07:08:02.358 +00:00 [WRN] No XML encryptor configured. Key {fbc28a85-0ed8-4601-81ad-eef6cc3ef58b} may be persisted to storage in unencrypted form.
+2025-10-27 07:19:52.133 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
+2025-10-27 07:19:52.269 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2025-10-27 07:19:52.616 +00:00 [WRN] No XML encryptor configured. Key {d2945c48-0196-4b07-a8f4-0fceb477fbdd} may be persisted to storage in unencrypted form.
