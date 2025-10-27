@@ -46,3 +46,9 @@ System.InvalidOperationException: The complex type property 'AppUser.Address' is
 2025-10-27 06:44:20.791 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
 2025-10-27 06:44:20.855 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
 2025-10-27 06:44:21.137 +00:00 [WRN] No XML encryptor configured. Key {7c58c926-cdf2-4570-a49d-4f3e64fc7863} may be persisted to storage in unencrypted form.
+2025-10-27 07:00:45.789 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
+2025-10-27 07:00:45.892 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2025-10-27 07:00:46.242 +00:00 [WRN] No XML encryptor configured. Key {a768c865-4a4d-4573-924f-9f7285da1bac} may be persisted to storage in unencrypted form.
+2025-10-27 07:04:23.173 +00:00 [WRN] Using an in-memory repository. Keys will not be persisted to storage.
+2025-10-27 07:04:23.296 +00:00 [WRN] Neither user profile nor HKLM registry available. Using an ephemeral key repository. Protected data will be unavailable when application exits.
+2025-10-27 07:04:23.600 +00:00 [WRN] No XML encryptor configured. Key {9215eb85-3058-4028-a677-aa221b362541} may be persisted to storage in unencrypted form.

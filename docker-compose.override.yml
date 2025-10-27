@@ -6,11 +6,11 @@ services:
     container_name: ordering.api
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ASPNETCORE_HTTP_PORTS=5001
+      - ASPNETCORE_HTTP_PORTS=8080
       - "sqlConnection=server=orderdb;User Id=sa;Password=M@jid9050;Encrypt=True;TrustServerCertificate=True;"
       - "RedisDb=catchdb:6379,password=majid9050"
     ports:
-      - "5001"
+      - "5001:8080"
   redisdb:
     container_name: catchdb
     restart: unless-stopped
