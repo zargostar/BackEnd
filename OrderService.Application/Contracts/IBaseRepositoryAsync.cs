@@ -1,4 +1,5 @@
-﻿using OrderService.Domain.Common;
+﻿using OrderService.Application.Models.utiles;
+using OrderService.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace OrderService.Application.Contracts
     public interface IBaseRepositoryAsync<T> where T : BaseEntity
     {
         IQueryable<T> GetAllQueryAble();
-        Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate);
+        Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate, PaginationDto pagination=null);
         Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate = null,
                                         Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                                         string includeString = null,

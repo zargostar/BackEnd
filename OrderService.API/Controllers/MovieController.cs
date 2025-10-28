@@ -8,6 +8,7 @@ namespace OrderService.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "WebSite")]
     public class MovieController : ControllerBase
     {
         private IMediator mediator;

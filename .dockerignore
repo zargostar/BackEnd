@@ -4,6 +4,7 @@
 **/.git
 **/.gitignore
 **/.project
+**/appsettings.Production.json
 **/.settings
 **/.toolstarget
 **/.vs

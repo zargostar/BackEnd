@@ -12,6 +12,7 @@ namespace OrderService.API.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [AllowAnonymous]
+    [ApiExplorerSettings(GroupName = "WebSite")]
     public class StatesController : ControllerBase
     {
         private IMediator mediator;

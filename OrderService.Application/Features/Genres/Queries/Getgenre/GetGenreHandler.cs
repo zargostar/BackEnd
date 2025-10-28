@@ -67,7 +67,7 @@ namespace OrderService.Application.Features.Genres.Queries.Getgenre
          //   _redis.Remove(genreKey);
             var data = await _redis.GetSet(genreKey, async () => {
               //  var genre0 = await genreRepository.GetByIdAsync(request.Id);
-               var genre = await genreRepository.GetAsync(x=>true);
+               var genre = await genreRepository.GetAsync(x=>true,null);
                 return genre;
             });
            // var ids = data.Select(x => x.Id).ToList();
