@@ -24,7 +24,8 @@ namespace OrderService.API.Controllers
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-   // [Authorize]
+    [ApiExplorerSettings(GroupName = "WebSite")]
+    // [Authorize]
     public class UserController : ControllerBase
     {
         private DataBaseContext context;

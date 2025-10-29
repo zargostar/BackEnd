@@ -17,7 +17,6 @@
     <Folder Include="Features\Theaters\Comands\" />
     <Folder Include="Features\Theaters\Queries\" />
     <Folder Include="Features\Actors\Comands\" />
-    <Folder Include="Features\Actors\Queries\" />
     <Folder Include="Features\Orders\Queries\" />
   </ItemGroup>
 

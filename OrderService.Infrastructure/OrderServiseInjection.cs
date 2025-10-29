@@ -34,6 +34,7 @@ namespace OrderService
             services.AddTransient<IOrderMongoService, OrderMongoService>();
             services.AddScoped<IStudentRepository, StudentRepository>();
             services.AddScoped<IResumeRepository, ResumeRepository>();
+            services .AddScoped<IActorRepository, ActorRepository>();
 
 
         }

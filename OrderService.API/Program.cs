@@ -80,7 +80,32 @@ using (var scope = app.Services.CreateScope())
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+
+
+
+    //app.UseSwaggerUI();
+
+    app.UseSwaggerUI(options =>
+    {
+      
+        options.SwaggerEndpoint("/swagger/WebSite/swagger.json", "WebSite");
+        options.SwaggerEndpoint("/swagger/AdminPannel/swagger.json", "AdminPannel");
+        options.SwaggerEndpoint("/swagger/Product/swagger.json", "Product");
+        //    options.S
+
+
+        //    options.SwaggerEndpoint("/swagger/v2/swagger.json", "API v2");
+
+        //    // Enable the dropdown feature for version switching
+        //    options.DefaultModelsExpandDepth(-1);  // Hide the models by default
+        //    options.RoutePrefix = string.Empty;  // Make Swagger UI accessible at the root (optional)
+    });
+
+
+    app.UseHttpsRedirection();
+
+   
+
     // SeedData.SeedAppData(app);
 }
 app.UseResponseCaching();
@@ -96,13 +121,28 @@ static void SecurityConfig(WebApplicationBuilder builder)
 {
     builder.Services.AddCors(option =>
     {
-        string front = builder.Configuration["FrontEnd"].ToString();
-        option.AddDefaultPolicy(policy =>
+        var env = builder.Environment;
+        if (env.IsDevelopment())
         {
-            policy.WithOrigins(front).AllowAnyHeader().
-            AllowAnyMethod()
-            .WithExposedHeaders(new string[] { "rowcount" });
-        });
+            option.AddDefaultPolicy(policy =>
+            {
+                policy.AllowAnyHeader();
+                policy.AllowAnyOrigin();
+                policy.AllowAnyMethod();
+            });
+        }
+        else
+        {
+            string front = builder.Configuration["FrontEnd"].ToString();
+            option.AddDefaultPolicy(policy =>
+            {
+                policy.WithOrigins(front).AllowAnyHeader().
+                AllowAnyMethod()
+                .WithExposedHeaders(new string[] { "rowcount" });
+            });
+
+        }
+      
 
     });
     builder.Services.AddAuthorization(config =>
@@ -265,10 +305,14 @@ static void SwaggerConfig(WebApplicationBuilder builder)
         }
     });
     });
+    builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen(c =>
     {
+        
         c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "taladoc.xml"));
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApi.talajoor", Version = "v1" });
+        c.SwaggerDoc("WebSite", new OpenApiInfo { Title = "WebApi.WebSite", Version= "WebSite", Description="Website Api" });
+        c.SwaggerDoc("AdminPannel", new OpenApiInfo { Title = "WebApi.panel.talajoor" ,Version= "AdminPannel", Description = " Api AdminPannel" });
+        c.SwaggerDoc("Product", new OpenApiInfo { Title = "WebApi.Product.talajoor", Version = "Product", Description = " Api Product" });
     });
 }
 

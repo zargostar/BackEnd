@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OrderService.Application.Contracts;
+using OrderService.Application.Models.utiles;
 using OrderService.Domain.Common;
 using OrderService.Infrastructure.Persistance;
 using System;
@@ -25,9 +26,18 @@ namespace OrderService.Infrastructure.Repositories
             return  _dbContext.Set<T>().AsQueryable();
         }
 
-        public async Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate)
+        public async Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate, PaginationDto pagination=null)
         {
-            return await _dbContext.Set<T>().Where(predicate).ToListAsync();
+            IQueryable<T> query = _dbContext.Set<T>();
+            query = query.Where(predicate);
+            if (pagination != null)
+            {
+              
+                query = query.ToPage<T>(pagination);
+               
+            }
+            var test = query.ToQueryString();
+            return await query.ToListAsync();
         }
 
         public async Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeString = null, bool disableTracking = true)

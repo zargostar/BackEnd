@@ -7,6 +7,7 @@ namespace OrderService.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "WebSite")]
     public class SizeController : ControllerBase
     {
         private readonly IMediator mediator;

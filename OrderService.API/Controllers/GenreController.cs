@@ -16,6 +16,7 @@ namespace OrderService.API.Controllers
    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "WebSite")]
     public class GenreController : ControllerBase
     {
         private readonly IMediator mediator;

@@ -19,6 +19,7 @@ namespace OrderService.API.Controllers
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
+    [ApiExplorerSettings(GroupName = "Product")]
     public class ProductController : ControllerBase
     {
         private readonly IMediator _mediator;

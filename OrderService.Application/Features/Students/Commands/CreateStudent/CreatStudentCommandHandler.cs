@@ -52,8 +52,8 @@ namespace OrderService.Application.Features.Students.Commands.CreateStudent
             // var data=await studentRepository.GetByIdAsync(newStudent.Id);
             //  var data2=await studentRepository.GetAsync(p=> EF.Functions.Like( p.Name,"%pp%"));
             //var data20=await studentRepository.GetAsync(p=>p.Images.Any(p=> EF.Functions.Like(p,"r")));
-            var xx = await studentRepository.GetAsync(p => p.Name.Contains("r"));
-            var dd =await studentRepository.GetAsync(p => p.Images.Any(p=> p.Contains("r")));
+            var xx = await studentRepository.GetAsync(p => p.Name.Contains("r"),null);
+            var dd =await studentRepository.GetAsync(p => p.Images.Any(p=> p.Contains("r")),null);
             //var dd0 = studentRepository.GetAsync(p => p.Images.Any(p=> p.Contains("%r%")));
             
            // var data21=await studentRepository.GetAsync(p=>p.Images.Any(p=> EF.Functions.Like(p,"%r%")));

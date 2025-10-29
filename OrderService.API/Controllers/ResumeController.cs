@@ -14,7 +14,8 @@ namespace OrderService.API.Controllers
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-   
+    [ApiExplorerSettings(GroupName = "WebSite")]
+
     public class ResumeController(IMediator mediator) : ControllerBase
     {
         private readonly IMediator mediator = mediator;
