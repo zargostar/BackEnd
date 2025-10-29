@@ -4,9 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderService", "OrderService", "{8F941E76-D79D-418E-83D3-180719786FE8}"
-	ProjectSection(SolutionItems) = preProject
-		OrderService.API\Dockerfile = OrderService.API\Dockerfile
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderService.API", "OrderService.API\OrderService.API.csproj", "{259E8539-C5A9-4213-B509-60BB07443FAA}"
 EndProject

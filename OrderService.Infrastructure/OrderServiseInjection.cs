@@ -20,6 +20,7 @@ namespace OrderService
     {
         public  static void  AddInfrastructurService(this IServiceCollection services,IConfiguration configuration)
         {
+            string tt = configuration["sqlConnection"];
             services.AddDbContext<DataBaseContext>(c => c.UseSqlServer(configuration["sqlConnection"]));
             // 
 
