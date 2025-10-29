@@ -121,13 +121,28 @@ static void SecurityConfig(WebApplicationBuilder builder)
 {
     builder.Services.AddCors(option =>
     {
-        string front = builder.Configuration["FrontEnd"].ToString();
-        option.AddDefaultPolicy(policy =>
+        var env = builder.Environment;
+        if (env.IsDevelopment())
         {
-            policy.WithOrigins(front).AllowAnyHeader().
-            AllowAnyMethod()
-            .WithExposedHeaders(new string[] { "rowcount" });
-        });
+            option.AddDefaultPolicy(policy =>
+            {
+                policy.AllowAnyHeader();
+                policy.AllowAnyOrigin();
+                policy.AllowAnyMethod();
+            });
+        }
+        else
+        {
+            string front = builder.Configuration["FrontEnd"].ToString();
+            option.AddDefaultPolicy(policy =>
+            {
+                policy.WithOrigins(front).AllowAnyHeader().
+                AllowAnyMethod()
+                .WithExposedHeaders(new string[] { "rowcount" });
+            });
+
+        }
+      
 
     });
     builder.Services.AddAuthorization(config =>
