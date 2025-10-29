@@ -108,12 +108,14 @@ if (app.Environment.IsDevelopment())
 
     // SeedData.SeedAppData(app);
 }
+app.UseCors();
 app.UseResponseCaching();
 app.UseAuthentication();
 app.UseAuthorization();
+Console.WriteLine($"Environment: {builder.Environment.EnvironmentName}");
 
 app.MapControllers();
-app.UseCors();
+
 //app.UseHangfireDashboard();
 app.Run();
 
