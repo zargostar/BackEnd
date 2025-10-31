@@ -22,10 +22,11 @@ namespace OrderService.Application.Features.Movies.Queries.GetMovieById
 
         public async Task<MovieDto> Handle(GetMovieByIdQuery request, CancellationToken cancellationToken)
         {
-           var movie= await movirRepository.GetMovieById(request.Id);
-          //  var movie = await movirRepository.GetAsync(x=>x.Id==request.Id,null,p=>p.);
-           // return mapper.Map<MovieDto>(movie);
-            return mapper.Map<MovieDto>(movie) ;
+            //var movie= await movirRepository.GetMovieById(request.Id);
+            //  var movie = await movirRepository.GetAsync(x=>x.Id==request.Id,null,p=>p.);
+            // return mapper.Map<MovieDto>(movie);
+            // return mapper.Map<MovieDto>(movie) ;
+            return new MovieDto();
         }
     }
 }

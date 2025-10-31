@@ -18,7 +18,7 @@ namespace OrderService.Application.Features.Actors.Queries.ActorsList
 
         public async Task<List<ActorDto>> Handle(ActorsListQuery request, CancellationToken cancellationToken)
         {
-           var actors= await _actorRepository.GetAsync(x => x.Name.Contains(request.Name),request);
+           var actors= await _actorRepository.GetAsync(x => x.Name.Contains(request.Name),null);
           //  var actor = await _actorRepository.GetAsync(x => x.Name.Contains("ali"),);
             return mapper.Map<List<ActorDto>>(actors);
 

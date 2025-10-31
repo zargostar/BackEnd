@@ -1,37 +1,39 @@
-using Identity.Bugeto.Helpers;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
+using FluentValidation.AspNetCore;
 using Hangfire;
 using Hangfire.SqlServer;
+using Identity.Bugeto.Helpers;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using OrderService.API;
+using OrderService.API.ApiServices;
 using OrderService.API.Filters;
+using OrderService.API.HangFireServices;
+using OrderService.API.Helpers.factory;
+using OrderService.API.Helpers.FileStorage;
+using OrderService.API.services;
 using OrderService.Application;
 using OrderService.Application.Contracts;
+using OrderService.Application.Contracts.WepClientServices;
 using OrderService.Domain.Common;
 using OrderService.Domain.Entities;
 using OrderService.Infrastructure;
 using OrderService.Infrastructure.Persistance;
+using OrderService.Infrastructure.WebClientApiservice;
 using Serilog;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Reflection;
 using System.Security.Claims;
 using System.Text;
-using OrderService.API.Helpers.FileStorage;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Mvc.Authorization;
-using OrderService.API.HangFireServices;
-using System.ComponentModel;
-using FluentValidation.AspNetCore;
-using OrderService.API.Helpers.factory;
-using OrderService.Application.Contracts.WepClientServices;
-using OrderService.Infrastructure.WebClientApiservice;
-using System.Reflection;
-using OrderService.API.services;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<SMSService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient();
@@ -48,6 +50,10 @@ builder.Services.AddControllers(optiopn =>
 }).ConfigureApiBehaviorOptions(BadRequestBehavior.Parse);
 builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+builder.Logging.ClearProviders();
+
+LogingConfig(builder);
+
 CatchingConfig(builder);
 ServiceInjection(builder);
 SwaggerConfig(builder);
@@ -87,7 +93,7 @@ if (app.Environment.IsDevelopment())
 
     app.UseSwaggerUI(options =>
     {
-      
+
         options.SwaggerEndpoint("/swagger/WebSite/swagger.json", "WebSite");
         options.SwaggerEndpoint("/swagger/AdminPannel/swagger.json", "AdminPannel");
         options.SwaggerEndpoint("/swagger/Product/swagger.json", "Product");
@@ -104,7 +110,7 @@ if (app.Environment.IsDevelopment())
 
     app.UseHttpsRedirection();
 
-   
+
 
     // SeedData.SeedAppData(app);
 }
@@ -144,7 +150,7 @@ static void SecurityConfig(WebApplicationBuilder builder)
             });
 
         }
-      
+
 
     });
     builder.Services.AddAuthorization(config =>
@@ -310,10 +316,10 @@ static void SwaggerConfig(WebApplicationBuilder builder)
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen(c =>
     {
-        
+
         c.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "taladoc.xml"));
-        c.SwaggerDoc("WebSite", new OpenApiInfo { Title = "WebApi.WebSite", Version= "WebSite", Description="Website Api" });
-        c.SwaggerDoc("AdminPannel", new OpenApiInfo { Title = "WebApi.panel.talajoor" ,Version= "AdminPannel", Description = " Api AdminPannel" });
+        c.SwaggerDoc("WebSite", new OpenApiInfo { Title = "WebApi.WebSite", Version = "WebSite", Description = "Website Api" });
+        c.SwaggerDoc("AdminPannel", new OpenApiInfo { Title = "WebApi.panel.talajoor", Version = "AdminPannel", Description = " Api AdminPannel" });
         c.SwaggerDoc("Product", new OpenApiInfo { Title = "WebApi.Product.talajoor", Version = "Product", Description = " Api Product" });
     });
 }
@@ -322,4 +328,18 @@ static void CatchingConfig(WebApplicationBuilder builder)
 {
     builder.Services.AddResponseCaching();
     builder.Services.AddMemoryCache();
+}
+
+static void LogingConfig(WebApplicationBuilder builder)
+{
+    builder.Logging.AddConsole();
+    if (builder.Environment.IsDevelopment())
+    {
+        builder.Logging.SetMinimumLevel(LogLevel.Information);
+    }
+    else
+    {
+        builder.Logging.SetMinimumLevel(LogLevel.Error);
+
+    }
 }

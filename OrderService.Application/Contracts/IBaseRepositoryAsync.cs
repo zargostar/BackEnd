@@ -16,11 +16,11 @@ namespace OrderService.Application.Contracts
         Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate = null,
                                         Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                                         string includeString = null,
-                                        bool disableTracking = true);
+                                        bool disableTracking = true, PaginationDto pagination = null);
         Task<List<T>> GetAsync(Expression<Func<T, bool>> predicate = null,
                                        Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
                                        List<Expression<Func<T, object>>> includes = null,
-                                       bool disableTracking = true);
+                                       bool disableTracking = true, PaginationDto pagination = null);
         Task<T> GetByIdAsync(int id);
         Task<T> GetByUserIdAsync(Expression<Func<T, bool>> predict);
         IQueryable<T> GetQueryAble(Expression<Func<T, bool>> predicate = null,

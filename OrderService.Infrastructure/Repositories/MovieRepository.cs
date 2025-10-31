@@ -17,13 +17,20 @@ namespace OrderService.Infrastructure.Repositories
         {
         }
 
-        public async Task<Movie> GetMovieById(int id)
+        //public async AsyncEnumerable<Movie> GetAsyncEnemorableMovie()
+
+        //{
+        //    return  _dbContext.Movies.AsAsyncEnumerable<Movie>();
+        //    //var movie = await _dbContext.Movies.Include(p => p.GenreMovie).ThenInclude(o=>o.Genre).
+        //    //      Include(p => p.ActorMovies)
+        //    //      .Include(p => p.MovieTheater).ThenInclude(p=>p.Theater)
+        //    //      .FirstOrDefaultAsync(x => x.Id == id);
+        //    //return movie;
+        //}
+
+        IAsyncEnumerable<Movie> IMovirRepository.GetAsyncEnemorableMovie()
         {
-            var movie = await _dbContext.Movies.Include(p => p.GenreMovie).ThenInclude(o=>o.Genre).
-                  Include(p => p.ActorMovies)
-                  .Include(p => p.MovieTheater).ThenInclude(p=>p.Theater)
-                  .FirstOrDefaultAsync(x => x.Id == id);
-            return movie;
+            return _dbContext.Movies.AsAsyncEnumerable<Movie>();
         }
     }
 }

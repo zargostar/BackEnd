@@ -10,6 +10,6 @@ namespace OrderService.Application.Contracts
 {
     public interface IMovirRepository:IBaseRepositoryAsync<Movie>
     {
-        Task<Movie> GetMovieById(int id);
+        IAsyncEnumerable<Movie> GetAsyncEnemorableMovie();
     }
 }
