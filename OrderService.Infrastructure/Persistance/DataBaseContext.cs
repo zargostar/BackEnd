@@ -2,24 +2,32 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using MongoDB.Bson;
+using OrderService.Application.Contracts;
+using OrderService.Domain.Common;
 using OrderService.Domain.Entities;
 using OrderService.Infrastructure.Persistance.EFConfigurations;
+using OrderServise.Domain.Entities;
+using SharpCompress.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace OrderService.Infrastructure.Persistance
 {
     public class DataBaseContext : IdentityDbContext<AppUser>
     {
-        public DataBaseContext(DbContextOptions options) : base(options)
+        private readonly ICurrentUser user;
+        public DataBaseContext(DbContextOptions options, ICurrentUser user) : base(options)
         {
+            this.user = user;
         }
         public DbSet<Feature> Features { get; set; }
-       // public DbSet<AppUser> Features { get; set; }
+        public DbSet<Category> Categories { get; set; }
         public DbSet<ProductFeature>  ProductFeatures { get; set; }
        public DbSet<Employee> Employees { get; set; }
         public DbSet<Product>  Products { get; set; }
@@ -41,7 +49,6 @@ namespace OrderService.Infrastructure.Persistance
         public DbSet<Student> Students { get; set; }
         public DbSet<Sport> Sports { get; set; }
         public DbSet<SportStudent> SportStudent { get; set; }
-        //public DbSet<AddressValueObject> AddressValueObject { get; set; }
         public DbSet<OrderTest> OrderTest { get; set; }
         public DbSet<Customer> Customer { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -53,24 +60,48 @@ namespace OrderService.Infrastructure.Persistance
                
 
             }
-            
-              
-
            );
             modelBuilder.ApplyConfiguration(new OrderEfConfiguration());
             modelBuilder.ApplyConfiguration(new CustommerEfConfigurations());
             modelBuilder.ApplyConfiguration(new SportStudentEfConfigurations());
-           // modelBuilder.ApplyConfiguration(new UserEfConfigurations());
+            modelBuilder.ApplyConfiguration(new ProductEfConfiguration());
+            modelBuilder.ApplyConfiguration(new ActorEfConfiguration());
             modelBuilder.HasDefaultSchema("ordering");
+    
+            
             modelBuilder.Entity<ActorMovie>().HasKey(p => new { p.MovieId, p.ActorId });
             modelBuilder.Entity<GenreMovie>().HasKey(p=>new {p.MovieId,p.GenreId});
             modelBuilder.Entity<MovieTheater>().HasKey(p => new { p.MovieId, p.TheaterId });
             modelBuilder.Entity<ProductSize>().HasKey(p=>new {p.ProductId,p.SizeId});
             modelBuilder.Entity<ProductFeature>().HasKey(p => new { p.ProductId, p.FeatureId });
+            modelBuilder.Entity<Category>().Property(x=>x.Id).HasDefaultValueSql("NEWID()");
+           // modelBuilder.Entity<Category>().Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
 
-            //modelBuilder.Entity<ProductSize>().ToTable()
+
+
             base.OnModelCreating(modelBuilder);
         }
-       
+ 
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+           
+          
+            foreach (var entity in ChangeTracker.Entries<BaseEntity>())
+            {
+                switch (entity.State)
+                {
+                    case EntityState.Added:
+                        entity.Entity.CreatedAt = DateTime.UtcNow;
+                        break;
+                    case EntityState.Modified:
+                        entity.Entity.UpdatedAt = DateTime.UtcNow;
+                        entity.Entity.DeletedBy = user.UserId;
+                        break;
+                }
+            }
+            return base.SaveChangesAsync(cancellationToken);
+        }
+
+
     }
 }

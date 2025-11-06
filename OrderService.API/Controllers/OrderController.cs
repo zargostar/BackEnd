@@ -16,7 +16,7 @@ namespace OrderService.API.Controllers
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    [ApiExplorerSettings(GroupName = "WebSite")]
+    [ApiExplorerSettings(GroupName = "AdminPannel")]
 
     public class OrderController : ControllerBase
     {

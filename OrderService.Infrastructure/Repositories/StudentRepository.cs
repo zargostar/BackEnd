@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 using OrderService.Application.Contracts;
 using OrderService.Domain.Entities;
-using OrderService.Infrastructure.Migrations;
+
 using OrderService.Infrastructure.Persistance;
 using System;
 using System.Collections.Generic;

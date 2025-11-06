@@ -13,13 +13,14 @@ using OrderService.Application.Features.Products.Queries.GetProductById;
 using OrderService.Application.Features.Products.Queries.ProductList;
 using OrderService.Application.Models.utiles;
 using OrderService.Domain.Entities;
+using OrderService.Infrastructure.Persistance;
 
 namespace OrderService.API.Controllers
 {
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    [ApiExplorerSettings(GroupName = "Product")]
+    [ApiExplorerSettings(GroupName = "AdminPannel")]
     public class ProductController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -66,6 +67,17 @@ namespace OrderService.API.Controllers
             var url =await uploader.SaveFile(image.Image, "productImage");
             return Ok(new {imgeUrl= url });
            
+        }
+        [HttpPost("CreatJson")]
+        public async Task<IActionResult> CreatJson([FromBody] Product products,DataBaseContext dataBaseContext)
+        {
+
+            dataBaseContext.Products.Add(products);
+            await dataBaseContext.SaveChangesAsync();
+
+            return NoContent();
+
+
         }
 
 

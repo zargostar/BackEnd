@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using OrderService.Application.Exceptions;
+using System.Data;
 
 namespace OrderService.API.Filters
 {
@@ -24,7 +25,7 @@ namespace OrderService.API.Filters
             }
            else if(context.Exception is ClientErrorMessage clientErrorMessage) {
                 errors.Add(clientErrorMessage.Message);
-                errors.Add("test");
+               
 
                 //errors.Add(clientErrorMessage.Message);
                 // context.Result = new BadRequestObjectResult(errors);
@@ -37,6 +38,12 @@ namespace OrderService.API.Filters
                 _logger.LogError(context.Exception.Message);
                 _logger.LogError("stack trace" + "-" + context.Exception.StackTrace);
 
+            }
+            else if(context.Exception is DBConcurrencyException ex)
+            {
+                errors.Add(" ایراد همزمانی مجدد اقدام کنید");
+                _logger.LogError(context.Exception.Message);
+                _logger.LogError("stack trace" + "-" + context.Exception.StackTrace);
             }
             else
             {

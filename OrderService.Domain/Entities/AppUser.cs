@@ -10,13 +10,17 @@ namespace OrderService.Domain.Entities
         public bool IsActive { get; set; } = true;
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Address Address { get; set; }    
-       
-      
-       
+        public Address Address { get; set; }   
+        public List<Order> Orders { get; set; }
+        public double Lat { get; set; } = 0;
+        public double Long { get; set; } = 0;
+
+
+        //AppUserId
 
 
     }
+
     [ComplexType]
     public class Address
     {
@@ -32,6 +36,6 @@ namespace OrderService.Domain.Entities
     public class Location
     {
        public double Latitude { get; set; }
-        public double Longitude { get; set; }
+       public double Longitude { get; set; }
     }
 }

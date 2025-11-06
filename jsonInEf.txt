@@ -1,19 +1,9 @@
-public class MyEntity
-{
-    public int Id { get; set; }
-    public MyJsonData JsonData { get; set; }
-}
+   var r = db.Orders.SelectMany(o => o.Items.DefaultIfEmpty(),
+        (o, i) => new { OrderId = o.Id,
+            Customer = o.FullName, 
+            Price = i != null ? i.Price : 0 }
 
-[Owned]
-public class MyJsonData
-{
-    public string Prop1 { get; set; }
-    public int Prop2 { get; set; }
-}
-
-protected override void OnModelCreating(ModelBuilder modelBuilder)
-{
-    modelBuilder.Entity<MyEntity>()
-        .OwnsOne(e => e.JsonData)
-        .ToJson();  // (Npgsql-specific extension to store owned entity as JSON)
-}
+     ).GroupBy(x => new { x.OrderId, x.Customer }).Select(x => 
+     new { Name = x.Key.Customer,
+         Total = x.Sum(c => c.Price) })
+     .ToPage(new PaginationDto()).ToQueryString();

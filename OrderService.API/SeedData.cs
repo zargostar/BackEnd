@@ -20,7 +20,9 @@ namespace OrderService.API
                         FirstName = "admin",
                         LastName = "admin",
                         UserName = "admin",
-                        Address=new Address()
+                        Lat = 40.7128,
+                        Long= 74.0060,
+                        Address =new Address()
                         {
                             HomeAddresses= new AddressDetail("jghuyguy55", "jyguyguy55", "grdtrdtr55"),
                             WorkAddresses =new AddressDetail("jghuyguy","jyguyguy","grdtrdtr")

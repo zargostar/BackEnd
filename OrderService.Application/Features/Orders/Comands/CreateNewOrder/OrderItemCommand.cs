@@ -10,7 +10,7 @@ namespace OrderService.Application.Features.Orders.Comands.CreateNewOrder
     public class OrderItemCommand : IRequest
     {
    
-
+       
         public string FullName { get; private set; }
         public string Address { get; private set; }
         public string Moblie { get; private set; }

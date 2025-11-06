@@ -33,6 +33,7 @@ using System.Security.Claims;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<IOrderSQLService, OrderSQLService>();
 builder.Services.AddScoped<SMSService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddHttpContextAccessor();
@@ -87,24 +88,14 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
 
-
-
-    //app.UseSwaggerUI();
-
     app.UseSwaggerUI(options =>
     {
 
         options.SwaggerEndpoint("/swagger/WebSite/swagger.json", "WebSite");
         options.SwaggerEndpoint("/swagger/AdminPannel/swagger.json", "AdminPannel");
         options.SwaggerEndpoint("/swagger/Product/swagger.json", "Product");
-        //    options.S
-
-
-        //    options.SwaggerEndpoint("/swagger/v2/swagger.json", "API v2");
-
-        //    // Enable the dropdown feature for version switching
-        //    options.DefaultModelsExpandDepth(-1);  // Hide the models by default
-        //    options.RoutePrefix = string.Empty;  // Make Swagger UI accessible at the root (optional)
+        options.SwaggerEndpoint("/swagger/Product/swagger.json", "Student");
+  
     });
 
 
@@ -118,7 +109,7 @@ app.UseCors();
 app.UseResponseCaching();
 app.UseAuthentication();
 app.UseAuthorization();
-Console.WriteLine($"Environment: {builder.Environment.EnvironmentName}");
+
 
 app.MapControllers();
 
@@ -321,6 +312,7 @@ static void SwaggerConfig(WebApplicationBuilder builder)
         c.SwaggerDoc("WebSite", new OpenApiInfo { Title = "WebApi.WebSite", Version = "WebSite", Description = "Website Api" });
         c.SwaggerDoc("AdminPannel", new OpenApiInfo { Title = "WebApi.panel.talajoor", Version = "AdminPannel", Description = " Api AdminPannel" });
         c.SwaggerDoc("Product", new OpenApiInfo { Title = "WebApi.Product.talajoor", Version = "Product", Description = " Api Product" });
+        c.SwaggerDoc("Student", new OpenApiInfo { Title = "WebApi.Student.talajoor", Version = "Student", Description = " Api Student" });
     });
 }
 

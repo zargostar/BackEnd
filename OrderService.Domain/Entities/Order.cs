@@ -14,15 +14,15 @@ namespace OrderService.Domain.Entities
         {
             
         }
-        public Order(string userId, string fullName, string address, string moblie)
+        public Order(string AppUserId, string fullName, string address, string moblie)
         {
-            UserId = userId;
+            AppUserId = AppUserId;
             FullName = fullName;
             Address = address;
             Moblie = moblie;
         }
 
-        public string UserId { get; set; }
+        public string AppUserId { get; set; }
         public string FullName { get; set; }
         public string Address { get; set; }
         public string Moblie { get; set; }

@@ -31,30 +31,31 @@ namespace OrderService.Application.Features.Orders.Comands.CreateNewOrder
         public async Task Handle(OrderItemCommand request, CancellationToken cancellationToken)
         {
          
-            string userId = "1";
+            string userId = "23d29699-bcf2-4324-a3b9-d50a1c745d57";
             var userOrder =await orderRepository.GetOrderForUser(userId);
            
-            if (userOrder is null)
-            {
+            //if (userOrder is null)
+            //{
              
                var order=mapper.Map<Order>(request);
-                order.UserId = userId;  
+                order.AppUserId = userId;
+
                 order.CheckMinimumPrice();
                 order.CheckValidOrderTime();
                 await orderRepository.AddAsync(order);
-            }
-            else
-            {
-                // 
-                mapper.Map(request, userOrder);
-                userOrder.CheckMinimumPrice();
-                userOrder.CheckValidOrderTime();
-                await orderRepository.UpdateAsync(userOrder);
-                //throw new ClientErrorMessage("این کاربر یک  سفارش دارد");
-            }
-           var mongoOrder= mapper.Map<OrderMongo>(request);
-            mongoOrder.UserId = userId;
-            BackgroundJob.Enqueue(() => mongoService.CreateOrder(mongoOrder));
+            //}
+            //else
+            //{
+            //    // 
+            //    mapper.Map(request, userOrder);
+            //    userOrder.CheckMinimumPrice();
+            //    userOrder.CheckValidOrderTime();
+            //    await orderRepository.UpdateAsync(userOrder);
+            //    //throw new ClientErrorMessage("این کاربر یک  سفارش دارد");
+            //}
+           //var mongoOrder= mapper.Map<OrderMongo>(request);
+           // mongoOrder.UserId = userId;
+           // BackgroundJob.Enqueue(() => mongoService.CreateOrder(mongoOrder));
             //await mongoService.CreateOrder(mongoOrder);
             
         }

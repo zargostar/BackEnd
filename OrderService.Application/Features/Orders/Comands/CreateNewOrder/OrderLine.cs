@@ -14,6 +14,6 @@ namespace OrderService.Application.Features.Orders.Comands.CreateNewOrder
             public int Price { get; set; }
             //public int Price { get; set; }
 
-    }
+        }
    
 }

@@ -18,7 +18,7 @@ namespace OrderService.Infrastructure.Repositories
 
         public async Task<Order> GetOrderForUser(string UserId)
         {
-            var data= await _dbContext.Orders.Include(x=>x.Items).FirstOrDefaultAsync(order=>order.UserId == UserId);
+            var data= await _dbContext.Orders.Include(x=>x.Items).FirstOrDefaultAsync(order=>order.AppUserId == UserId);
             ////var t = await _dbContext.Products.Include(x=>x.orderi)
             //var list = await _dbContext.Products.Include(x => x.OrderItems).Select(x => new { Name = x.Name, Count =  x.OrderItems.Count()  }).ToListAsync();
             //var list00 =  _dbContext.Products.Include(x => x.OrderItems).Select(x => new { Name = x.Name, Count = x.OrderItems.Count() }).ToQueryString();

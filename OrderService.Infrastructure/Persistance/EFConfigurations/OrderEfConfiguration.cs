@@ -22,7 +22,7 @@ namespace OrderService.Infrastructure.Persistance.EFConfigurations
             //  builder.HasQueryFilter(x => x.UserId == null);
            // builder.HasIndex(x => x.Moblie).HasFillFactor(100);
           // builder.Property(x=>x.UserId).HasPrecision(6,3);
-            builder.HasIndex(x => x.UserId);
+         
             builder.Property(x=>x.Address).IsRequired().HasMaxLength(150);
             builder.Property(x => x.Moblie).IsRequired().HasMaxLength(10);
             builder.Property(x => x.FullName).IsRequired().HasMaxLength(50).HasColumnType("nvarchar(50)");
