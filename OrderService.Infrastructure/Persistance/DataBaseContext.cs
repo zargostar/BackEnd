@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MongoDB.Bson;
 using OrderService.Application.Contracts;
 using OrderService.Domain.Common;
@@ -53,6 +55,8 @@ namespace OrderService.Infrastructure.Persistance
         public DbSet<Customer> Customer { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+ 
+
             modelBuilder.Entity<OrderTest>(b =>
             {
                 b.ComplexProperty(x => x.ShippingAddress);
@@ -75,13 +79,25 @@ namespace OrderService.Infrastructure.Persistance
             modelBuilder.Entity<ProductSize>().HasKey(p=>new {p.ProductId,p.SizeId});
             modelBuilder.Entity<ProductFeature>().HasKey(p => new { p.ProductId, p.FeatureId });
             modelBuilder.Entity<Category>().Property(x=>x.Id).HasDefaultValueSql("NEWID()");
-           // modelBuilder.Entity<Category>().Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
+            modelBuilder.HasDbFunction(typeof(SqlServerJsonFunctions)
+           .GetMethod(nameof(SqlServerJsonFunctions.JsonValue)))
+           .HasName("JSON_VALUE")
+           .IsBuiltIn();
+            // modelBuilder.Entity<Category>().Property(x => x.CreatedAt).HasDefaultValueSql("GETDATE()");
 
 
 
             base.OnModelCreating(modelBuilder);
         }
- 
+
+
+        public static class SqlServerJsonFunctions
+            {
+                [DbFunction("JSON_VALUE", IsBuiltIn = true)]
+                public static string JsonValue(string json, [NotParameterized] string path)
+                    => throw new NotSupportedException(); // only used in SQL translation
+        }
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
            

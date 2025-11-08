@@ -13,8 +13,8 @@ using OrderService.Infrastructure.Persistance;
 namespace OrderService.Infrastructure.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20251106114418_cat")]
-    partial class cat
+    [Migration("20251107192847_qqqq0")]
+    partial class qqqq0
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -171,10 +171,7 @@ namespace OrderService.Infrastructure.Migrations
                     b.Property<DateTime?>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Degries")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<TimeSpan>("Delay")
+                    b.Property<TimeSpan?>("Delay")
                         .HasColumnType("time");
 
                     b.Property<DateTime?>("DeletedAt")
@@ -183,17 +180,18 @@ namespace OrderService.Infrastructure.Migrations
                     b.Property<string>("DeletedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Grade")
-                        .HasColumnType("decimal(18,4)");
-
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("MetaData")
+                    b.Property<string>("LastName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
@@ -291,45 +289,6 @@ namespace OrderService.Infrastructure.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
-
-                    b.ComplexProperty<Dictionary<string, object>>("Address", "OrderService.Domain.Entities.AppUser.Address#Address", b1 =>
-                        {
-                            b1.IsRequired();
-
-                            b1.ComplexProperty<Dictionary<string, object>>("HomeAddresses", "OrderService.Domain.Entities.AppUser.Address#Address.HomeAddresses#AddressDetail", b2 =>
-                                {
-                                    b2.IsRequired();
-
-                                    b2.Property<string>("City")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-
-                                    b2.Property<string>("PostalCode")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-
-                                    b2.Property<string>("Street")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-                                });
-
-                            b1.ComplexProperty<Dictionary<string, object>>("WorkAddresses", "OrderService.Domain.Entities.AppUser.Address#Address.WorkAddresses#AddressDetail", b2 =>
-                                {
-                                    b2.IsRequired();
-
-                                    b2.Property<string>("City")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-
-                                    b2.Property<string>("PostalCode")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-
-                                    b2.Property<string>("Street")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-                                });
-                        });
 
                     b.HasKey("Id");
 
@@ -759,6 +718,8 @@ namespace OrderService.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Products", "ordering");
                 });
 
@@ -1068,6 +1029,34 @@ namespace OrderService.Infrastructure.Migrations
                     b.ToTable("Theaters", "ordering");
                 });
 
+            modelBuilder.Entity("OrderServise.Domain.Entities.Category", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValueSql("NEWID()");
+
+                    b.Property<DateTime?>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DeletedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories", "ordering");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1121,102 +1110,34 @@ namespace OrderService.Infrastructure.Migrations
 
             modelBuilder.Entity("OrderService.Domain.Entities.Actor", b =>
                 {
-                    b.OwnsOne("OrderService.Domain.Entities.Location", "Location", b1 =>
+                    b.OwnsMany("OrderService.Domain.Entities.Discription", "DiscriptionI18n", b1 =>
                         {
                             b1.Property<int>("ActorId")
                                 .HasColumnType("int");
 
-                            b1.Property<double>("Latitude")
-                                .HasColumnType("float");
+                            b1.Property<int>("Id")
+                                .ValueGeneratedOnAdd()
+                                .HasColumnType("int");
 
-                            b1.Property<double>("Longitude")
-                                .HasColumnType("float");
+                            b1.Property<string>("Key")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
 
-                            b1.HasKey("ActorId");
+                            b1.Property<string>("Value")
+                                .IsRequired()
+                                .HasColumnType("nvarchar(max)");
+
+                            b1.HasKey("ActorId", "Id");
 
                             b1.ToTable("Actors", "ordering");
 
-                            b1.ToJson("Location");
+                            b1.ToJson("DiscriptionI18n");
 
                             b1.WithOwner()
                                 .HasForeignKey("ActorId");
                         });
 
-                    b.OwnsOne("OrderServise.Domain.Entities.TAddress", "Address", b1 =>
-                        {
-                            b1.Property<int>("ActorId")
-                                .HasColumnType("int");
-
-                            b1.HasKey("ActorId");
-
-                            b1.ToTable("Actors", "ordering");
-
-                            b1.ToJson("Address");
-
-                            b1.WithOwner()
-                                .HasForeignKey("ActorId");
-
-                            b1.OwnsOne("OrderService.Domain.Entities.AddressDetail", "Home", b2 =>
-                                {
-                                    b2.Property<int>("TAddressActorId")
-                                        .HasColumnType("int");
-
-                                    b2.Property<string>("City")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-
-                                    b2.Property<string>("PostalCode")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-
-                                    b2.Property<string>("Street")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-
-                                    b2.HasKey("TAddressActorId");
-
-                                    b2.ToTable("Actors", "ordering");
-
-                                    b2.WithOwner()
-                                        .HasForeignKey("TAddressActorId");
-                                });
-
-                            b1.OwnsOne("OrderService.Domain.Entities.AddressDetail", "Office", b2 =>
-                                {
-                                    b2.Property<int>("TAddressActorId")
-                                        .HasColumnType("int");
-
-                                    b2.Property<string>("City")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-
-                                    b2.Property<string>("PostalCode")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-
-                                    b2.Property<string>("Street")
-                                        .IsRequired()
-                                        .HasColumnType("nvarchar(max)");
-
-                                    b2.HasKey("TAddressActorId");
-
-                                    b2.ToTable("Actors", "ordering");
-
-                                    b2.WithOwner()
-                                        .HasForeignKey("TAddressActorId");
-                                });
-
-                            b1.Navigation("Home")
-                                .IsRequired();
-
-                            b1.Navigation("Office")
-                                .IsRequired();
-                        });
-
-                    b.Navigation("Address");
-
-                    b.Navigation("Location")
-                        .IsRequired();
+                    b.Navigation("DiscriptionI18n");
                 });
 
             modelBuilder.Entity("OrderService.Domain.Entities.ActorMovie", b =>
@@ -1314,6 +1235,13 @@ namespace OrderService.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Customer");
+                });
+
+            modelBuilder.Entity("OrderService.Domain.Entities.Product", b =>
+                {
+                    b.HasOne("OrderServise.Domain.Entities.Category", null)
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId");
                 });
 
             modelBuilder.Entity("OrderService.Domain.Entities.ProductFeature", b =>
@@ -1453,6 +1381,11 @@ namespace OrderService.Infrastructure.Migrations
             modelBuilder.Entity("OrderService.Domain.Entities.Theater", b =>
                 {
                     b.Navigation("Movies");
+                });
+
+            modelBuilder.Entity("OrderServise.Domain.Entities.Category", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }
