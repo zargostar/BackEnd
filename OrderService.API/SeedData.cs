@@ -22,18 +22,18 @@ namespace OrderService.API
                         UserName = "admin",
                         Lat = 40.7128,
                         Long= 74.0060,
-                        Address =new Address()
-                        {
-                            HomeAddresses= new AddressDetail("jghuyguy55", "jyguyguy55", "grdtrdtr55"),
-                            WorkAddresses =new AddressDetail("jghuyguy","jyguyguy","grdtrdtr")
-                            //WorkAddresses=new AddressDetail()
-                            //{
-                            //    City = "oo",
-                            //    PostalCode = "4444",
-                            //    Street = "uiy8"
+                        //Address = new Address()
+                        //{
+                        //    HomeAddresses = new AddressDetail("jghuyguy55", "jyguyguy55", "grdtrdtr55"),
+                        //    WorkAddresses = new AddressDetail("jghuyguy", "jyguyguy", "grdtrdtr")
+                        //    WorkAddresses = new AddressDetail()
+                        //    {
+                        //        City = "oo",
+                        //        PostalCode = "4444",
+                        //        Street = "uiy8"
 
-                            //}
-                        },
+                        //    }
+                        //},
 
                     };
                  
@@ -71,31 +71,31 @@ namespace OrderService.API
         }
         public static async Task SeedDataLast(DataBaseContext context)
         {
-            if (context.Actors.Count() == 0)
-            {
-                context.AddRange(Actors());
-                await context.SaveChangesAsync();
+            //if (context.Actors.Count() == 0)
+            //{
+            //    context.AddRange(Actors());
+            //    await context.SaveChangesAsync();
 
-            }
-
-        }
-        private static List<Actor> Actors()
-        {
-            var actors = new List<Actor>()
-            {
-                new Actor()
-                {
-                    Name="Majid",
-
-                },
-                new Actor()
-                {
-                    Name="hasan"
-                }
-            };
-            return actors;
+            //}
 
         }
+        //private static List<Actor> Actors()
+        //{
+        //    var actors = new List<Actor>()
+        //    {
+        //        new Actor()
+        //        {
+        //            Name="Majid",
+
+        //        },
+        //        new Actor()
+        //        {
+        //            Name="hasan"
+        //        }
+        //    };
+        //    return actors;
+
+        //}
     }
 
 }

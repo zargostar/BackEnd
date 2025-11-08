@@ -1,11 +1,14 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OrderService.Application.Contracts;
+using OrderService.Application.Features.Actors.Dto;
 using OrderService.Application.Features.Movies.Comands;
 using OrderService.Application.Features.Movies.Queries.GetMovieById;
 using OrderService.Domain.Entities;
+using System.Reflection.Metadata.Ecma335;
 
 namespace OrderService.API.Controllers
 {
@@ -18,11 +21,13 @@ namespace OrderService.API.Controllers
     {
         private IMediator mediator;
         private readonly IMovirRepository movirRepository;
+        private readonly IMapper mapper;
 
-        public MovieController(IMediator mediator, IMovirRepository movirRepository)
+        public MovieController(IMediator mediator, IMovirRepository movirRepository, IMapper mapper)
         {
             this.mediator = mediator;
             this.movirRepository = movirRepository;
+            this.mapper = mapper;
         }
 
         [HttpPost]
@@ -40,13 +45,14 @@ namespace OrderService.API.Controllers
             return Ok(result);
         }
         [HttpGet("moviestream")]
-        public async IAsyncEnumerable<string> StreamMovie()
+        public async IAsyncEnumerable<ActorDto> StreamMovie()
         {
             await foreach (var item in movirRepository.GetAsyncEnemorableMovie())
             {
 
                 await Task.Delay(3000);
-                    yield return item.Title;
+                    var data=mapper.Map<ActorDto>(item);    
+                    yield return data;
 
                 
             }

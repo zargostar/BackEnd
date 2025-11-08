@@ -1,11 +1,14 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.EntityFrameworkCore.Query;
 using OrderService.API.ApiServices;
+using OrderService.API.Dtos;
 using OrderService.API.services;
 using OrderService.Application.Features.Actors.Dto;
 using OrderService.Application.Features.Actors.Queries.ActorsList;
@@ -18,10 +21,14 @@ using OrderServise.Domain.Entities;
 using StackExchange.Redis;
 using System.Data;
 using System.Diagnostics;
+using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Xml.Serialization;
 using static MongoDB.Driver.WriteConcern;
+using static OrderService.Infrastructure.Persistance.DataBaseContext;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace OrderService.API.Controllers
 {
@@ -38,16 +45,18 @@ namespace OrderService.API.Controllers
         private SMSService mSService;
         //ActorsListQuery
         private readonly IMediator mediator;
+        private readonly IMapper mapper;
 
-        public ActorController(IMediator mediator, ILogger<ActorController> logger, SMSService mSService, DataBaseContext db)
+        public ActorController(IMediator mediator, ILogger<ActorController> logger, SMSService mSService, DataBaseContext db, IMapper mapper)
         {
             this.mediator = mediator;
             _logger = logger;
             this.mSService = mSService;
             this.db = db;
+            this.mapper = mapper;
         }
-       
-      
+
+
         [HttpGet("Actors")]
         public async Task<ActionResult<List<ActorDto>>> Get([FromQuery] ActorsListQuery query, CancellationToken cancellationToken)
         {
@@ -85,38 +94,97 @@ namespace OrderService.API.Controllers
         [HttpPost("AddDictionary")]
         public async Task<IActionResult> AddDictionary([FromBody] ActorModel actor, IOrderSQLService orderSQLService)
         {
-            var catCount = db.Products.Select(p => p.CategoryId).Distinct().ToQueryString();
-            var catCount0 = db.Products.GroupBy(x => x.CategoryId).Count();
-            var totalSale = await orderSQLService.TotalSale("23d29699-bcf2-4324-a3b9-d50a1c745d57");
-            var query = db.Actors;               // IQueryable
-            Console.WriteLine(query.ToQueryString());  // Show generated SQL
-            var orders = await orderSQLService.Orders("23d29699-bcf2-4324-a3b9-d50a1c745d57");
+            //var catCount = db.Products.Select(p => p.CategoryId).Distinct().ToQueryString();
+            //var catCount0 = db.Products.GroupBy(x => x.CategoryId).Count();
+            //var totalSale = await orderSQLService.TotalSale("23d29699-bcf2-4324-a3b9-d50a1c745d57");
+            // Show generated SQL
+            //var orders = await orderSQLService.Orders("23d29699-bcf2-4324-a3b9-d50a1c745d57");
 
-            int totalActors = query.Count();
-            // Execute after inspecting SQL
-            var res0 = db.Actors.Where(x => x.Location.Latitude > 0).ToQueryString();
-            LeftGoinPagination();
 
-            var actorAdd = new Actor()
-            {
-                MetaData = actor.MetaData,
-                Address = actor.Address,
-                Name = actor.Name,
-                Location = actor.Location,
-                Degries = [1, 2, 3]
+            //var res0 = db.Actors.Where(x => x.Location.Latitude > 0).ToQueryString();
 
-            };
+            //var actorAdd = new Actor()
+            //{
+            //    Title = JsonSerializer.Serialize(actor.Title),
+            //    Name = actor.Name,
+            //    DiscriptionI18n = actor.DiscriptionI18n?.Select(d => new Discription
+            //    {
+            //        Key = d.Key,
+            //        Value = d.Value
+            //    }).ToList()
+            //};
+            var actorAdd = mapper.Map<Actor>(actor);
+
             await db.Actors.AddAsync(actorAdd);
             await db.SaveChangesAsync();
 
-            LeftJoinSelectMany();
-            CategoryProductsOrderItems();
+            //try
+            //{
+            //    await db.SaveChangesAsync();
+            //}
+            //catch (DbUpdateException ex)
+            //{
+            //    Console.WriteLine(ex.InnerException?.Message);
+            //}
 
-            TotallSale();
-
-            TotalSaleForProducts();
+            //LeftGoinPagination();
+            //LeftJoinSelectMany();
+            //CategoryProductsOrderItems();
+            //TotallSale();
+            //TotalSaleForProducts();
 
             return NoContent();
+        }
+   
+
+       [HttpGet("GetEnumerableAsync")]
+       public async IAsyncEnumerable<ActorDto> GetEnumerableAsync()
+                {
+
+            var res = await db.Actors.Select(x => new
+                        {
+                            x.Id,
+                            x.Name,
+                            x.Title, // full JSON
+                            TitleFa = SqlServerJsonFunctions.JsonValue(x.Title, "$.fa") // extract "fa"
+                        })
+                        .ToListAsync();
+
+
+            await foreach (var item in db.Actors.AsAsyncEnumerable<Actor>())
+            {
+              //ct.ThrowIfCancellationRequested();
+                //await Task.Delay(100,ct);
+                var data = mapper.Map<ActorDto>(item);
+                yield return data;
+                
+            }
+
+           
+        }
+
+        [HttpGet("[action]")]
+        public async Task<ActionResult<List<ActorDto>>> GetJason([FromQuery] string lan)
+        {
+            var res0 =  db.Actors.Select(x => new ActorDto
+            {
+
+                Name = x.Name,
+                Title = SqlServerJsonFunctions.JsonValue(x.Title, $"$.{lan}") // extract "fa"
+            }).ToQueryString();
+            var res = await db.Actors.Select(x => new ActorDto
+            {
+               
+               Name= x.Name,
+                Title = SqlServerJsonFunctions.JsonValue(x.Title, $"$.{lan}") // extract "fa"
+            })
+            .ToListAsync();
+            return res;
+
+
+
+
+
         }
 
         private void LeftGoinPagination()

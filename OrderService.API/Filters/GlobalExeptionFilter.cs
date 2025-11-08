@@ -50,6 +50,7 @@ namespace OrderService.API.Filters
                 errors.Add("یک ایراد داخلی سرور رخ داده است");
                 _logger.LogError(context.Exception.Message);
                 _logger.LogError("stack trace" + "-" + context.Exception.StackTrace);
+                _logger.LogError("stack trace" + "-" + context.Exception.InnerException.Message);
 
             }
           

@@ -1,11 +1,10 @@
-﻿namespace OrderService.API.Controllers
+﻿namespace OrderServise.Domain.Entities
 {
-    public partial class ActorController
-    {
+    
         public class AddressDetail
         {
             public string City { get; set; }
             public string Street { get; set; }
         }
-    }
+   
 }

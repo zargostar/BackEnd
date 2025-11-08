@@ -8,6 +8,8 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
       - "sqlConnection=server=orderdb;User Id=sa;Password=M@jid9050;Encrypt=True;TrustServerCertificate=True;"
+       # Server=DESKTOP-CQ9FRIO\\SQLEXPRESS;Database=Carisma;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False;TrustServerCertificate=True
+     
       - "RedisDb=catchdb:6379,password=majid9050"
     ports:
       - "5001:8080"
