@@ -7,8 +7,12 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
-      - "sqlConnection=server=orderdb;User Id=sa;Password=M@jid9050;Encrypt=True;TrustServerCertificate=True;"
-       # Server=DESKTOP-CQ9FRIO\\SQLEXPRESS;Database=Carisma;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False;TrustServerCertificate=True
+      # - "sqlConnection=server=orderdb;User Id=sa;Password=M@jid9050;dataBase=Carisma;Encrypt=True;TrustServerCertificate=True;"
+      -  "sqlConnection=Server=host.docker.internal;User Id=sa;Password=M@jid9050;dataBase=Carisma;Encrypt=True;TrustServerCertificate=True;"
+      # -  "sqlConnection=Server=host.docker.internal;User Id=sa;Password=M@jid9050;dataBase=Carisma;Encrypt=True;TrustServerCertificate=True;"
+      
+
+
      
       - "RedisDb=catchdb:6379,password=majid9050"
     ports:
@@ -34,6 +38,6 @@ services:
       ACCEPT_EULA: "Y"
 
     ports:
-      - "1433:1433"
+      - "14333:1433"
     volumes:
       - sql_data:/var/opt/mssql

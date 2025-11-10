@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -37,6 +38,8 @@ namespace OrderService.Infrastructure.WebClientApiservice
                     {
                         PropertyNameCaseInsensitive = true,
                     });
+                    var s=await request.Content.ReadFromJsonAsync<GenreApiDto>(cancellationToken);
+
                     genreList.Add(mapper.Map<GenreDto>(data));
 
                     for (int i = 0; i < 100; i++)

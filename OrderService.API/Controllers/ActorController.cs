@@ -114,8 +114,9 @@ namespace OrderService.API.Controllers
             //    }).ToList()
             //};
             var actorAdd = mapper.Map<Actor>(actor);
-
+            actorAdd.Ids=actor.Ids;
             await db.Actors.AddAsync(actorAdd);
+            var ss = db.Actors.Where(x => x.Ids.Contains(1)).ToQueryString();
             await db.SaveChangesAsync();
 
             //try
@@ -163,28 +164,31 @@ namespace OrderService.API.Controllers
            
         }
 
-        [HttpGet("[action]")]
-        public async Task<ActionResult<List<ActorDto>>> GetJason([FromQuery] string lan)
+        [HttpGet("[action]/{id}")]
+        public async Task<ActionResult<ActorDto>> GetJason(int id, [FromQuery] string lan)
         {
-            var res0 =  db.Actors.Select(x => new ActorDto
-            {
-
-                Name = x.Name,
-                Title = SqlServerJsonFunctions.JsonValue(x.Title, $"$.{lan}") // extract "fa"
-            }).ToQueryString();
+        
             var res = await db.Actors.Select(x => new ActorDto
             {
-               
-               Name= x.Name,
+                Id = x.Id,
+                Name = x.Name,
+                Title = SqlServerJsonFunctions.JsonValue(x.Title, $"$.{lan}") // extract "fa"
+            })
+            .FirstOrDefaultAsync();
+            return res;
+        }
+        [HttpGet("[action]")]
+        public async Task<ActionResult<List<ActorDto>>> GetJasons([FromQuery] string lan)
+        {
+      
+            var res = await db.Actors.Select(x => new ActorDto
+            {
+                Id = x.Id,
+                Name = x.Name,
                 Title = SqlServerJsonFunctions.JsonValue(x.Title, $"$.{lan}") // extract "fa"
             })
             .ToListAsync();
-            return res;
-
-
-
-
-
+            return Ok(res);
         }
 
         private void LeftGoinPagination()

@@ -18,14 +18,15 @@ namespace OrderService.Infrastructure.Persistance.EFConfigurations
         {
             builder.Property(x => x.FullName)
                 .HasComputedColumnSql("[Name] +' '+[LastName]", true);
-            
 
 
+            builder.ToTable("Actors", "acc");
             builder.OwnsMany(x => x.DiscriptionI18n, nav =>
             {
                 nav.ToJson();
             }
             );
+            builder.Property(x => x.Ids);
             //builder.Property(a => a.Title)
             //       .HasConversion(
             //          v => JsonSerializer.Serialize(v ?? new Dictionary<string, string>(), (JsonSerializerOptions)null),

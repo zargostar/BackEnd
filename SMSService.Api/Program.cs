@@ -1,15 +1,31 @@
 using SMSService.Api;
+using SMSService.Api.ApiService;
+using SMSService.Api.ApiService.ActorHandler;
+using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//cliend compresion
 // Add services to the container.
-
+var configiuration = builder.Configuration;
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<SendSMSService>();
+
+builder.Services.AddHttpClient("actor", config =>
+{
+    config.BaseAddress=new Uri(configiuration["apiUri"]);
+}).AddHttpMessageHandler<ActorAuthHandler>()
+.ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
+{
+    AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Brotli
+}); ;
+builder.Services.AddScoped<ActorAuthHandler>();
+builder.Services.AddScoped<ActorApiService>();
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

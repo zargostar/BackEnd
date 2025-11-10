@@ -9,7 +9,7 @@ namespace OrderService.Domain.Entities
         public string? Image { get; set; }
         public string LastName { get; set; }
     
-
+        public List<int> Ids { get; set; }
         public string  Title { get; set; }
         public string  ? FullName { get; private set; }
         //public List<ActorMovie>? ActorMovies { get; set; }

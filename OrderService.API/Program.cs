@@ -1,4 +1,4 @@
-using FluentValidation.AspNetCore;
+﻿using FluentValidation.AspNetCore;
 using Hangfire;
 using Hangfire.SqlServer;
 using Identity.Bugeto.Helpers;
@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.RequestDecompression;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -28,6 +30,7 @@ using OrderService.Infrastructure.WebClientApiservice;
 using Serilog;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO.Compression;
 using System.Reflection;
 using System.Security.Claims;
 using System.Text;
@@ -52,6 +55,27 @@ builder.Services.AddControllers(optiopn =>
 builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 builder.Logging.ClearProviders();
+//server that expect gzipRequestDecompression
+builder.Services.AddRequestDecompression();
+
+
+//  Add response compression services
+builder.Services.AddResponseCompression(options =>
+{
+    // Add Gzip and Brotli as supported providers
+    options.Providers.Add<GzipCompressionProvider>();
+    // Limit compression to specific MIME types (add application/json)
+    options.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+        new[] { "application/json" });
+    // Optional: allow compression even for HTTPS responses
+    options.EnableForHttps = true;
+});
+
+// 2️⃣ Configure compression levels
+builder.Services.Configure<GzipCompressionProviderOptions>(opts =>
+{
+    opts.Level = CompressionLevel.Fastest; // Or Optimal
+});
 
 LogingConfig(builder);
 
@@ -59,17 +83,11 @@ CatchingConfig(builder);
 ServiceInjection(builder);
 SwaggerConfig(builder);
 SecurityConfig(builder);
-
-
-
-
-
-
-
-
 HangFireServices(builder);
 
 var app = builder.Build();
+app.UseRequestDecompression();
+app.UseResponseCompression();
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
@@ -335,3 +353,13 @@ static void LogingConfig(WebApplicationBuilder builder)
 
     }
 }
+
+
+//public class GzipDecompressionProvider : IDecompressionProvider
+//{
+//    public Stream GetDecompressionStream(Stream stream)
+//    {
+//        // Return a GZipStream that decompresses the incoming request body
+//        return new GZipStream(stream, CompressionMode.Decompress, leaveOpen: false);
+//    }
+//}
