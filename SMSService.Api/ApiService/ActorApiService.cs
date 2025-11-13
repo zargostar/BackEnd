@@ -13,9 +13,9 @@ namespace SMSService.Api.ApiService
         private readonly HttpClient httpClient;
        
 
-        public ActorApiService(IHttpClientFactory httpClient)
+        public ActorApiService(HttpClient httpClient)
         {
-            this.httpClient = httpClient.CreateClient("actor");
+            this.httpClient = httpClient;
            
         }
 

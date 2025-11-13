@@ -108,11 +108,14 @@ if (app.Environment.IsDevelopment())
 
     app.UseSwaggerUI(options =>
     {
-
+        // the second option is used in  "Student00" dropdown list
+        //the first option is url and "StudentTest" "/swagger/StudentTest/swagger.json" 
+        // is used in c.SwaggerDoc and    [ApiExplorerSettings(GroupName = "StudentTest")]
+        //  c.SwaggerDoc("StudentTest", new OpenApiInfo { Title = "WebApi.Student.talajoor", Version = "Student", Description = " Api Student" });
         options.SwaggerEndpoint("/swagger/WebSite/swagger.json", "WebSite");
         options.SwaggerEndpoint("/swagger/AdminPannel/swagger.json", "AdminPannel");
         options.SwaggerEndpoint("/swagger/Product/swagger.json", "Product");
-        options.SwaggerEndpoint("/swagger/Product/swagger.json", "Student");
+        options.SwaggerEndpoint("/swagger/StudentTest/swagger.json", "Student00");
   
     });
 
@@ -330,7 +333,7 @@ static void SwaggerConfig(WebApplicationBuilder builder)
         c.SwaggerDoc("WebSite", new OpenApiInfo { Title = "WebApi.WebSite", Version = "WebSite", Description = "Website Api" });
         c.SwaggerDoc("AdminPannel", new OpenApiInfo { Title = "WebApi.panel.talajoor", Version = "AdminPannel", Description = " Api AdminPannel" });
         c.SwaggerDoc("Product", new OpenApiInfo { Title = "WebApi.Product.talajoor", Version = "Product", Description = " Api Product" });
-        c.SwaggerDoc("Student", new OpenApiInfo { Title = "WebApi.Student.talajoor", Version = "Student", Description = " Api Student" });
+        c.SwaggerDoc("StudentTest", new OpenApiInfo { Title = "WebApi.Student.talajoor", Version = "Student", Description = " Api Student" });
     });
 }
 

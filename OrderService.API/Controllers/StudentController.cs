@@ -23,7 +23,7 @@ namespace OrderService.API.Controllers
     [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
-    [ApiExplorerSettings(GroupName = "WebSite")]
+    [ApiExplorerSettings(GroupName = "Student")]
     public class StudentController : ControllerBase
     {
         private readonly IMediator mediator;

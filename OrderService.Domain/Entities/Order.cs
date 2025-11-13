@@ -26,6 +26,7 @@ namespace OrderService.Domain.Entities
         public string FullName { get; set; }
         public string Address { get; set; }
         public string Moblie { get; set; }
+        public long? Freight { get; set; }
         public List<OrderItem> Items { get; set;} = new List<OrderItem>();
         public void CheckMinimumPrice()
         {

@@ -1,6 +1,9 @@
+using Polly;
+using Polly.Extensions.Http;
 using SMSService.Api;
 using SMSService.Api.ApiService;
 using SMSService.Api.ApiService.ActorHandler;
+using SMSService.Api.Dapper;
 using System.Net;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,21 +11,26 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 var configiuration = builder.Configuration;
 builder.Services.AddControllers();
+builder.Services.AddSingleton<ISqlConnectionFactory, SqlConnectionFactory>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<SendSMSService>();
-
-builder.Services.AddHttpClient("actor", config =>
+builder.Services.AddHttpClient<SuplierApiService>(config =>
 {
     config.BaseAddress=new Uri(configiuration["apiUri"]);
+});
+builder.Services.AddHttpClient<ActorApiService>(config =>
+{
+    config.BaseAddress = new Uri(configiuration["apiUri"]);
 }).AddHttpMessageHandler<ActorAuthHandler>()
 .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler
 {
     AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Brotli
-}); ;
+}).AddPolicyHandler(PollyHelper.GetRetryPolicy())
+.AddPolicyHandler(PollyHelper.GetCircuitBreakerPolicy());
 builder.Services.AddScoped<ActorAuthHandler>();
-builder.Services.AddScoped<ActorApiService>();
+
 
 var app = builder.Build();
 
@@ -39,3 +47,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+

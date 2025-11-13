@@ -80,8 +80,9 @@ namespace OrderService.API.ApiServices
             var taskResult=await Task.WhenAll(taskList);
             foreach (var item in taskResult)
             {
-                var x= JsonSerializer.Deserialize<SendMessageResponse>(await item.Content.ReadAsStringAsync(), _options);
-                result.Add(x);
+               // var x= JsonSerializer.Deserialize<SendMessageResponse>(await item.Content.ReadAsStringAsync(), _options);
+                var data = await item.Content.ReadFromJsonAsync<SendMessageResponse>();
+                result.Add(data);
                 
             }
             return result;

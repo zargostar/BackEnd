@@ -28,6 +28,7 @@ namespace OrderService.Infrastructure.Persistance
         {
             this.user = user;
         }
+        public DbSet<Suplier> Supliers { get; set; }
         public DbSet<Feature> Features { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductFeature>  ProductFeatures { get; set; }
@@ -70,6 +71,7 @@ namespace OrderService.Infrastructure.Persistance
             modelBuilder.ApplyConfiguration(new SportStudentEfConfigurations());
             modelBuilder.ApplyConfiguration(new ProductEfConfiguration());
             modelBuilder.ApplyConfiguration(new ActorEfConfiguration());
+            modelBuilder.ApplyConfiguration(new SuplierEfConfiguration());
             modelBuilder.HasDefaultSchema("ordering");
     
             

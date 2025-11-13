@@ -7,6 +7,8 @@ using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.EntityFrameworkCore.Query;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.IdentityModel.Tokens;
 using OrderService.API.ApiServices;
 using OrderService.API.Dtos;
 using OrderService.API.services;
@@ -15,6 +17,7 @@ using OrderService.Application.Features.Actors.Queries.ActorsList;
 using OrderService.Application.Features.Movies.Comands;
 using OrderService.Application.Features.Orders.Comands.CreateNewOrder;
 using OrderService.Application.Models.utiles;
+using OrderService.Application.Redis;
 using OrderService.Domain.Entities;
 using OrderService.Infrastructure.Persistance;
 using OrderServise.Domain.Entities;
@@ -60,9 +63,11 @@ namespace OrderService.API.Controllers
         [HttpGet("Actors")]
         public async Task<ActionResult<List<ActorDto>>> Get([FromQuery] ActorsListQuery query, CancellationToken cancellationToken)
         {
-           
-           
-            cancellationToken.ThrowIfCancellationRequested();
+            using var cth = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+            cth.CancelAfter(TimeSpan.FromSeconds(3));
+            var tocken = cth.Token;
+
+            tocken.ThrowIfCancellationRequested();
             _logger.LogInformation("hello logger");
             _logger.LogError("bad err");
             _logger.LogInformation("information logging");
@@ -74,7 +79,7 @@ namespace OrderService.API.Controllers
             stopwatch.Stop();
             Console.WriteLine($"Elapsed time parllel task: {stopwatch.ElapsedMilliseconds} ms");
             stopwatch.Start();
-            var res0 =await  mSService.SendSMSInLINE(new List<int> { 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3 },  cancellationToken);
+            var res0 =await  mSService.SendSMSInLINE(new List<int> { 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3 }, tocken);
         
       
             stopwatch.Stop();
@@ -99,7 +104,7 @@ namespace OrderService.API.Controllers
             //var totalSale = await orderSQLService.TotalSale("23d29699-bcf2-4324-a3b9-d50a1c745d57");
             // Show generated SQL
             //var orders = await orderSQLService.Orders("23d29699-bcf2-4324-a3b9-d50a1c745d57");
-
+          
 
             //var res0 = db.Actors.Where(x => x.Location.Latitude > 0).ToQueryString();
 
@@ -140,8 +145,7 @@ namespace OrderService.API.Controllers
 
        [HttpGet("GetEnumerableAsync")]
        public async IAsyncEnumerable<ActorDto> GetEnumerableAsync()
-                {
-
+        {
             var res = await db.Actors.Select(x => new
                         {
                             x.Id,
@@ -150,8 +154,6 @@ namespace OrderService.API.Controllers
                             TitleFa = SqlServerJsonFunctions.JsonValue(x.Title, "$.fa") // extract "fa"
                         })
                         .ToListAsync();
-
-
             await foreach (var item in db.Actors.AsAsyncEnumerable<Actor>())
             {
               //ct.ThrowIfCancellationRequested();
@@ -160,22 +162,23 @@ namespace OrderService.API.Controllers
                 yield return data;
                 
             }
-
-           
         }
 
         [HttpGet("[action]/{id}")]
-        public async Task<ActionResult<ActorDto>> GetJason(int id, [FromQuery] string lan)
+        public async Task<ActionResult<ActorDto>> GetJason(int id, [FromQuery] string lan, [FromServices] IDistributedCache distributedCache)
         {
-        
-            var res = await db.Actors.Select(x => new ActorDto
-            {
-                Id = x.Id,
-                Name = x.Name,
-                Title = SqlServerJsonFunctions.JsonValue(x.Title, $"$.{lan}") // extract "fa"
-            })
-            .FirstOrDefaultAsync();
-            return res;
+         return  await distributedCache.GetSet<ActorDto>("catch-key",async () => {
+                var res = await db.Actors.Select(x => new ActorDto
+                {
+                    Id = x.Id,
+                    Name = x.Name,
+                    Title = SqlServerJsonFunctions.JsonValue(x.Title, $"$.{lan}") // extract "fa"
+                })
+                .FirstOrDefaultAsync();
+                return res;
+            });
+
+         
         }
         [HttpGet("[action]")]
         public async Task<ActionResult<List<ActorDto>>> GetJasons([FromQuery] string lan)
@@ -189,6 +192,32 @@ namespace OrderService.API.Controllers
             })
             .ToListAsync();
             return Ok(res);
+        }
+        [HttpGet("[Action]")]
+        public async Task<IActionResult> GetCategory(IOrderSQLService orderSQLService,Guid id, [FromServices] IDistributedCache distributedCache)
+        {
+            //var test =await orderSQLService.Categories(id);
+            distributedCache.GetSet<int>("hello", async () => 12);
+          var rrr=  db.Categories.Select(p => new { p.Name, Total = p.Products.Max(p => p.Price) }).ToQueryString();
+           
+
+            return Ok();
+
+        }
+
+        private void NewLeftJoin()
+        {
+            var rql = db.Categories.SelectMany(c => c.Products.DefaultIfEmpty(), (c, p) =>
+                new
+                {
+                    p.CategoryId,
+                    c.Name,
+                    p.Price,
+                    p.InStock
+                }
+                ).GroupBy(g => new { g.Name, g.CategoryId })
+            .Select(s => new { s.Key, TotalCount = s.Count(x => x.CategoryId != null), TotalPrice = s.Sum(x => x.Price) })
+            .ToQueryString();
         }
 
         private void LeftGoinPagination()

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OrderService.Infrastructure.Persistance;
 
@@ -12,9 +13,11 @@ using OrderService.Infrastructure.Persistance;
 namespace OrderService.Infrastructure.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    partial class DataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20251111124841_freight")]
+    partial class freight
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -723,17 +726,12 @@ namespace OrderService.Infrastructure.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("rowversion");
 
-                    b.Property<int?>("SuplierId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("SuplierId");
 
                     b.ToTable("Products", "ordering");
                 });
@@ -1072,39 +1070,6 @@ namespace OrderService.Infrastructure.Migrations
                     b.ToTable("Categories", "ordering");
                 });
 
-            modelBuilder.Entity("OrderServise.Domain.Entities.Suplier", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("DeletedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Supliers", "ordering");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -1290,13 +1255,6 @@ namespace OrderService.Infrastructure.Migrations
                     b.HasOne("OrderServise.Domain.Entities.Category", null)
                         .WithMany("Products")
                         .HasForeignKey("CategoryId");
-
-                    b.HasOne("OrderServise.Domain.Entities.Suplier", "Suplier")
-                        .WithMany("Products")
-                        .HasForeignKey("SuplierId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("Suplier");
                 });
 
             modelBuilder.Entity("OrderService.Domain.Entities.ProductFeature", b =>
@@ -1434,11 +1392,6 @@ namespace OrderService.Infrastructure.Migrations
                 });
 
             modelBuilder.Entity("OrderServise.Domain.Entities.Category", b =>
-                {
-                    b.Navigation("Products");
-                });
-
-            modelBuilder.Entity("OrderServise.Domain.Entities.Suplier", b =>
                 {
                     b.Navigation("Products");
                 });

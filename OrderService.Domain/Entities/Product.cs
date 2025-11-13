@@ -16,6 +16,8 @@ namespace OrderService.Domain.Entities
         public long InStock {get; set; } 
         public List<OrderItem> OrderItems { get; set; }
         public Guid? CategoryId { get; set; }
+        public int? SuplierId { get; set; }
+        public Suplier Suplier { get; set; }
         public string Name { get; set; }
         [Timestamp]
         public byte[] RowVersion { get; set; }
