@@ -11,6 +11,7 @@ using Microsoft.Extensions.Caching.Distributed;
 using Microsoft.IdentityModel.Tokens;
 using OrderService.API.ApiServices;
 using OrderService.API.Dtos;
+using OrderService.API.Filters;
 using OrderService.API.services;
 using OrderService.Application.Contracts;
 using OrderService.Application.Features.Actors.Dto;
@@ -40,8 +41,8 @@ namespace OrderService.API.Controllers
     [ApiController]
 
     [ApiExplorerSettings(GroupName = "AdminPannel")]
-  
-   
+
+    [Authorize(Policy = "AdminOrOperator")]
     public partial class ActorController : ControllerBase
     {
         private readonly ILogger<ActorController> _logger;
@@ -64,6 +65,7 @@ namespace OrderService.API.Controllers
 
 
         [HttpGet("Actors")]
+        [CreditAuthorize(50)]
         public async Task<ActionResult<List<ActorDto>>> Get([FromQuery] ActorsListQuery query, CancellationToken cancellationToken)
         {
             var t=currentUser.UserId;
@@ -185,6 +187,7 @@ namespace OrderService.API.Controllers
 
          
         }
+
         [HttpGet("[action]")]
         public async Task<ActionResult<List<ActorDto>>> GetJasons([FromQuery] string lan)
         {

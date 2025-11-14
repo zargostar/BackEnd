@@ -170,7 +170,8 @@ static void SecurityConfig(WebApplicationBuilder builder)
         //user should have both claim to be authorized
         // config.AddPolicy("IsAdmin", policy => policy.RequireClaim("userRole", "admin"));
         // config.AddPolicy("IsCustomer", policy => policy.RequireClaim("customerRole", "customer"));
-        config.AddPolicy("IsOperator", policy => policy.RequireRole(UserRole.OPERATOR));
+       // [Authorize(Policy = "AdminOnly")]
+        config.AddPolicy("AdminOrOperator", policy => policy.RequireRole(UserRole.ADMIN,UserRole.OPERATOR));
     });
     builder.Services.AddHttpContextAccessor();
     builder.Services.AddScoped<ICurrentUser>(provider =>
