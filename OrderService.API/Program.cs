@@ -127,11 +127,11 @@ if (app.Environment.IsDevelopment())
     // SeedData.SeedAppData(app);
 }
 app.UseCors();
-app.UseResponseCaching();
+
 app.UseAuthentication();
 app.UseAuthorization();
-
-
+app.UseResponseCaching();
+app.UseHttpsRedirection();
 app.MapControllers();
 
 //app.UseHangfireDashboard();
@@ -172,6 +172,7 @@ static void SecurityConfig(WebApplicationBuilder builder)
         // config.AddPolicy("IsCustomer", policy => policy.RequireClaim("customerRole", "customer"));
         config.AddPolicy("IsOperator", policy => policy.RequireRole(UserRole.OPERATOR));
     });
+    builder.Services.AddHttpContextAccessor();
     builder.Services.AddScoped<ICurrentUser>(provider =>
     {
         var context = provider.GetService<IHttpContextAccessor>();
@@ -183,7 +184,7 @@ static void SecurityConfig(WebApplicationBuilder builder)
         };
         return currentUser;
     });
-    builder.Services.AddScoped<IUserValidation, UserValidation>();
+   // builder.Services.AddScoped<IUserValidation, UserValidation>();
     builder.Services.AddIdentity<AppUser, IdentityRole>()
         .AddEntityFrameworkStores<DataBaseContext>()
         .AddDefaultTokenProviders()
@@ -224,37 +225,37 @@ static void SecurityConfig(WebApplicationBuilder builder)
             ClockSkew = TimeSpan.Zero
 
         };
-        options.Events = new JwtBearerEvents()
-        {
-            OnAuthenticationFailed = context =>
-            {
-                return Task.CompletedTask;
-            },
-            OnTokenValidated = context =>
-            {
-                var validationService = context.HttpContext.RequestServices
-                .GetRequiredService<IUserValidation>();
+        //options.Events = new JwtBearerEvents()
+        //{
+        //    OnAuthenticationFailed = context =>
+        //    {
+        //        return Task.CompletedTask;
+        //    },
+        //    OnTokenValidated = context =>
+        //    {
+        //        var validationService = context.HttpContext.RequestServices
+        //        .GetRequiredService<IUserValidation>();
 
-                return validationService.Excecut(context);
-                // return Task.CompletedTask;
-            },
-            OnChallenge = context =>
-            {
-                return Task.CompletedTask;
+        //        return validationService.Excecut(context);
+        //        // return Task.CompletedTask;
+        //    },
+        //    OnChallenge = context =>
+        //    {
+        //        return Task.CompletedTask;
 
-            },
-            OnMessageReceived = context =>
-            {
-                return Task.CompletedTask;
-            },
-            OnForbidden = context =>
-            {
-                return Task.CompletedTask;
-            }
+        //    },
+        //    OnMessageReceived = context =>
+        //    {
+        //        return Task.CompletedTask;
+        //    },
+        //    OnForbidden = context =>
+        //    {
+        //        return Task.CompletedTask;
+        //    }
 
 
 
-        };
+        //};
     });
 }
 

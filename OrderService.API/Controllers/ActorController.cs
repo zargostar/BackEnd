@@ -12,6 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using OrderService.API.ApiServices;
 using OrderService.API.Dtos;
 using OrderService.API.services;
+using OrderService.Application.Contracts;
 using OrderService.Application.Features.Actors.Dto;
 using OrderService.Application.Features.Actors.Queries.ActorsList;
 using OrderService.Application.Features.Movies.Comands;
@@ -37,7 +38,7 @@ namespace OrderService.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [AllowAnonymous]
+
     [ApiExplorerSettings(GroupName = "AdminPannel")]
   
    
@@ -49,20 +50,24 @@ namespace OrderService.API.Controllers
         //ActorsListQuery
         private readonly IMediator mediator;
         private readonly IMapper mapper;
+        private readonly ICurrentUser currentUser;
 
-        public ActorController(IMediator mediator, ILogger<ActorController> logger, SMSService mSService, DataBaseContext db, IMapper mapper)
+        public ActorController(IMediator mediator, ILogger<ActorController> logger, SMSService mSService, DataBaseContext db, IMapper mapper, ICurrentUser currentUser)
         {
             this.mediator = mediator;
             _logger = logger;
             this.mSService = mSService;
             this.db = db;
             this.mapper = mapper;
+            this.currentUser = currentUser;
         }
 
 
         [HttpGet("Actors")]
         public async Task<ActionResult<List<ActorDto>>> Get([FromQuery] ActorsListQuery query, CancellationToken cancellationToken)
         {
+            var t=currentUser.UserId;
+            var tt = currentUser.FullName;
             using var cth = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
             cth.CancelAfter(TimeSpan.FromSeconds(3));
             var tocken = cth.Token;
