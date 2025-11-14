@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using OrderService.Application.Contracts;
 using OrderService.Domain.Entities;
+using System.Security.Claims;
 
 namespace OrderService.API.Filters
 {
-    public class CreditAuthorizeFilter : IAsyncAuthorizationFilter
+    public class CreditAuthorizeFilter :Attribute, IAsyncAuthorizationFilter
     {
         private readonly UserManager<AppUser> userManager;
         private readonly int Credit;
@@ -22,7 +23,9 @@ namespace OrderService.API.Filters
 
         public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
         {
-            var userId=currentUser.UserId;
+
+            // var userId= context.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value;
+            var userId = currentUser.UserId;
             var yy = context.HttpContext.User.FindFirst("hassport").Value;
             var user = await userManager.FindByIdAsync(userId);
             if (user.Credit < Credit)

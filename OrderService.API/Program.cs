@@ -181,6 +181,7 @@ static void SecurityConfig(WebApplicationBuilder builder)
         {
             FullName = context?.HttpContext?.User.FindFirstValue("fullName") ?? "0",
             UserId = context?.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier) ?? "0",
+            
 
         };
         return currentUser;
@@ -235,7 +236,7 @@ static void SecurityConfig(WebApplicationBuilder builder)
         //    OnTokenValidated = context =>
         //    {
         //        var validationService = context.HttpContext.RequestServices
-        //        .GetRequiredService<IUserValidation>();
+        //       .GetRequiredService<IUserValidation>();
 
         //        return validationService.Excecut(context);
         //        // return Task.CompletedTask;
@@ -360,11 +361,4 @@ static void LogingConfig(WebApplicationBuilder builder)
 }
 
 
-//public class GzipDecompressionProvider : IDecompressionProvider
-//{
-//    public Stream GetDecompressionStream(Stream stream)
-//    {
-//        // Return a GZipStream that decompresses the incoming request body
-//        return new GZipStream(stream, CompressionMode.Decompress, leaveOpen: false);
-//    }
-//}
+
