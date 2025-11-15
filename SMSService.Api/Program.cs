@@ -3,6 +3,7 @@ using Polly.Extensions.Http;
 using SMSService.Api;
 using SMSService.Api.ApiService;
 using SMSService.Api.ApiService.ActorHandler;
+using SMSService.Api.ApiService.BackGroundService;
 using SMSService.Api.Dapper;
 using System.Net;
 
@@ -30,6 +31,9 @@ builder.Services.AddHttpClient<ActorApiService>(config =>
 }).AddPolicyHandler(PollyHelper.GetRetryPolicy())
 .AddPolicyHandler(PollyHelper.GetCircuitBreakerPolicy());
 builder.Services.AddScoped<ActorAuthHandler>();
+
+builder.Services.AddSingleton<IBackgroundTaskQueue, BackgroundTaskQueue>();
+builder.Services.AddHostedService<SupplierWorker>();
 
 
 var app = builder.Build();

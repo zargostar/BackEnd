@@ -20,17 +20,17 @@ namespace SMSService.Api.ApiService
         {
             var random = new Random();
             var num = random.Next(1, 6);
-            var err=new Random();
-            var readomErr = err.Next(1, 5);
-            if (random.Next(1, 10) <7)
-                throw new Exception("Simulated send error");
+            //var err=new Random();
+            //var readomErr = err.Next(1, 5);
+            //if (random.Next(1, 10) <7)
+            //    throw new Exception("Simulated send error");
 
             await Task.Delay(1000*num);
             Console.WriteLine($"Hello {name} from {name} delay {num}");
 
         }
 
-        private async Task WithRetray(string name, string country)
+        private async Task WithRetray(string name, string country,CancellationToken ct=default)
         {
             const int  maxRetry= 3;
             for (int attempt = 1; attempt <= maxRetry; attempt ++)
@@ -55,8 +55,38 @@ namespace SMSService.Api.ApiService
                 
             }
         }
+        public async Task Get(CancellationToken ct = default) {
+            
+            var cts = new CancellationTokenSource();
+            var token = cts.Token;
 
-        public async Task Get()
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+            };
+
+            await using var stream = await httpClient.GetStreamAsync("/api/suplier", token);
+
+            // Create async stream of SuplierDto
+            var items = JsonSerializer.DeserializeAsyncEnumerable<SuplierDto>(stream, options, token);
+
+            // Parallel processing (auto-balancing)
+            await Parallel.ForEachAsync(items, new ParallelOptions
+            {
+                MaxDegreeOfParallelism = Environment.ProcessorCount,
+                CancellationToken = token
+            }, async (item, ct) =>
+            {
+                if (item is null)
+                    return;
+
+                await WithRetray(item.Name, item.Country, ct);
+            });
+
+        }
+
+
+        public async Task GetChanel()
         {
                 //  Flow:
 
@@ -89,7 +119,7 @@ namespace SMSService.Api.ApiService
                 var producer = Task.Run(async () =>
                 {
                     await using var res = await httpClient.GetStreamAsync("/api/suplier");
-                    await foreach (var item in JsonSerializer.DeserializeAsyncEnumerable<SuplierDto>(res, options))
+                    await foreach (var item in JsonSerializer.DeserializeAsyncEnumerable<SuplierDto>(res))
                     {
                         if (item != null)
                             await channel.Writer.WriteAsync(item);

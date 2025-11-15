@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SMSService.Api.ApiService;
+using SMSService.Api.ApiService.BackGroundService;
 
 namespace SMSService.Api.Controllers
 {
@@ -11,11 +12,13 @@ namespace SMSService.Api.Controllers
         private readonly SendSMSService sendSMS;
         private readonly SuplierApiService suplierApiService;
         private readonly ILogger<SendSMSController> logger;
-        public SendSMSController(SendSMSService sendSMS, ILogger<SendSMSController> logger, SuplierApiService suplierApiService)
+        private readonly IBackgroundTaskQueue _queue;
+        public SendSMSController(SendSMSService sendSMS, ILogger<SendSMSController> logger, SuplierApiService suplierApiService, IBackgroundTaskQueue queue)
         {
             this.sendSMS = sendSMS;
             this.logger = logger;
             this.suplierApiService = suplierApiService;
+            _queue = queue;
         }
         [HttpGet("send/{id}")]
         public async Task<IActionResult> Send(int id,CancellationToken cancellationToken)
@@ -40,7 +43,11 @@ namespace SMSService.Api.Controllers
         [HttpGet("[action]")]
         public async Task<IActionResult> Get()
         {
-           await suplierApiService.Get();
+            //await suplierApiService.Get();
+            _queue.QueueWork(async token =>
+            {
+                await suplierApiService.Get();
+            });
             return NoContent();
         }
     }
